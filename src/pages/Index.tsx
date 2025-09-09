@@ -275,7 +275,11 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-2xl font-bold text-brand-blue mb-4">HelloJaiSoif</div>
+              <img 
+                src="/lovable-uploads/f4a29674-2d79-405a-88fe-31f2072d4996.png"
+                alt="HelloJaiSoif Logo" 
+                className="h-12 w-auto mb-4"
+              />
               <p className="text-muted-foreground mb-4">
                 Des packs boissons prêts à partager pour tous vos événements.
               </p>
@@ -289,10 +293,10 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-brand-text mb-4">Liens utiles</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-muted-foreground hover:text-brand-blue transition-smooth">Mentions légales</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-brand-blue transition-smooth">CGV</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-brand-blue transition-smooth">Politique de confidentialité</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-brand-blue transition-smooth">Politique cookies</a></li>
+                <li><a href="/mentions-legales" className="text-muted-foreground hover:text-brand-blue transition-smooth">Mentions légales</a></li>
+                <li><a href="/cgv" className="text-muted-foreground hover:text-brand-blue transition-smooth">CGV</a></li>
+                <li><a href="/politique-confidentialite" className="text-muted-foreground hover:text-brand-blue transition-smooth">Politique de confidentialité</a></li>
+                <li><a href="/politique-cookies" className="text-muted-foreground hover:text-brand-blue transition-smooth">Politique cookies</a></li>
               </ul>
             </div>
             
@@ -300,10 +304,10 @@ const Index = () => {
               <h4 className="font-bold text-brand-text mb-4">Support</h4>
               <p className="text-muted-foreground mb-2">Service client :</p>
               <a 
-                href="mailto:support@hellojaisoif.fr" 
+                href="mailto:HelloJaisoif@gmail.com" 
                 className="text-brand-blue hover:underline font-medium"
               >
-                support@hellojaisoif.fr
+                HelloJaisoif@gmail.com
               </a>
             </div>
             
