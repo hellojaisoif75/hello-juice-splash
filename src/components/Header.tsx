@@ -34,9 +34,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/f4a29674-2d79-405a-88fe-31f2072d4996.png"
+              src="/lovable-uploads/52ad253b-07a3-477f-bba4-891012f9dcf3.png"
               alt="HelloJaiSoif Logo" 
-              className="h-12 w-auto cursor-pointer"
+              className="h-16 w-auto cursor-pointer bg-white rounded-lg px-2 py-1"
               onClick={() => scrollToSection("hero")}
             />
           </div>
