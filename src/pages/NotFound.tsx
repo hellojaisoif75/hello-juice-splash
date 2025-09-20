@@ -7,7 +7,7 @@ const NotFound = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="pt-32 pb-20">
+      <div className="pt-36 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-6xl md:text-7xl font-bold text-brand-black mb-6 font-serif">404</h1>
           <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>

@@ -30,13 +30,13 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <a href="/" className="hover:opacity-80 transition-opacity">
               <img 
                 src="/hellojaisoif-logo.png"
                 alt="HelloJaiSoif Logo" 
-                className="h-12 w-auto"
+                className="h-16 w-auto max-w-none"
               />
             </a>
           </div>

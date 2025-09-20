@@ -108,7 +108,7 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section id="hero" className="pt-20 pb-16 bg-white">
+      <section id="hero" className="pt-24 pb-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center lg:text-left">
