@@ -20,7 +20,7 @@ const TikTokIcon = ({ size = 20 }: { size?: number }) => (
 );
 
 const SocialLinks = ({ 
-  instagramUrl = "https://instagram.com/hellojaisoif",
+  instagramUrl = "https://www.instagram.com/hellojaisoif/",
   facebookUrl = "https://facebook.com/hellojaisoif", 
   tiktokUrl = "https://tiktok.com/@hellojaisoif"
 }: SocialLinksProps) => {
