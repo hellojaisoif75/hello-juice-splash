@@ -34,7 +34,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="hover:opacity-80 transition-opacity">
               <img 
-                src="/lovable-uploads/52ad253b-07a3-477f-bba4-891012f9dcf3.png"
+                src="/hellojaisoif-logo.png"
                 alt="HelloJaiSoif Logo" 
                 className="h-12 w-auto"
               />

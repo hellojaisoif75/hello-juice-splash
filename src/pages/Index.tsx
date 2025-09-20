@@ -290,7 +290,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
               <img 
-                src="/logo-hellojaisoif.png"
+                src="/hellojaisoif-logo.png"
                 alt="HelloJaiSoif Logo" 
                 className="h-16 w-auto mb-6 bg-white rounded-lg p-2"
               />
