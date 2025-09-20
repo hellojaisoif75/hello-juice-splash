@@ -1,4 +1,4 @@
-import { Droplets, Shield, Truck, Clock, CheckCircle } from "lucide-react";
+import { Droplets, Shield, Truck, Clock, CheckCircle, Package, Eye } from "lucide-react";
 import Header from "@/components/Header";
 import CTAButton from "@/components/CTAButton";
 import ProductCard from "@/components/ProductCard";
@@ -103,134 +103,142 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section id="hero" className="pt-20 pb-16 overflow-hidden">
+      <section id="hero" className="pt-20 pb-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
-                Des packs boissons prêts à partager,{" "}
-                <span className="text-brand-blue">livrés rapidement</span>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black mb-6 font-serif">
+                Des packs boissons<br/>
+                <span className="text-brand-gold">prêts à partager</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Commandez aujourd'hui le Pack Enfants (54,99 € TTC). 
-                D'autres packs arrivent bientôt pour tous vos événements.
+              <p className="text-xl md:text-2xl text-brand-gray mb-8 font-sans max-w-2xl">
+                Commandez aujourd'hui le Pack Enfants (54,99 € TTC).<br/>
+                Les autres packs arrivent bientôt.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <CTAButton variant="primary" size="lg" onClick={scrollToForm}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <CTAButton 
+                  variant="primary" 
+                  size="lg" 
+                  onClick={scrollToForm}
+                  className="text-lg px-10 py-4"
+                >
                   Commander maintenant
                 </CTAButton>
-                <CTAButton variant="outline" size="lg" onClick={() => {
-                  const element = document.getElementById("produit");
-                  if (element) element.scrollIntoView({ behavior: "smooth" });
-                }}>
-                  Découvrir le pack
-                </CTAButton>
+              </div>
+              
+              {/* Decorative line */}
+              <div className="mt-12 flex items-center justify-center lg:justify-start">
+                <div className="w-20 h-0.5 bg-brand-gold"></div>
+                <div className="w-2 h-2 bg-brand-gold rounded-full mx-4"></div>
+                <div className="w-20 h-0.5 bg-brand-gold"></div>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Boissons fraîches HelloJaiSoif" 
-                className="rounded-2xl shadow-card w-full h-auto"
-              />
-              <div className="absolute -bottom-4 -right-4 bg-brand-orange text-white p-4 rounded-full shadow-button">
-                <Droplets size={32} />
+            
+            <div className="flex-1 relative">
+              <div className="relative z-10">
+                <img 
+                  src={heroImage} 
+                  alt="Pack de boissons HelloJaiSoif" 
+                  className="w-full h-auto rounded-2xl shadow-elegant"
+                />
               </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-brand-gold/10 rounded-full -z-10"></div>
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-gold/5 rounded-full -z-10"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* USP Section */}
-      <section className="py-16 bg-brand-gray-light">
+      <section className="py-20 bg-brand-gray-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="bg-brand-blue/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="text-brand-blue" size={32} />
+              <div className="w-16 h-16 mx-auto mb-6 bg-brand-gold rounded-full flex items-center justify-center">
+                <Package className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-bold text-brand-text mb-2">Pratique</h3>
-              <p className="text-muted-foreground">Packs prêts à l'emploi, parfaits pour tous vos événements</p>
+              <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif">Pratique</h3>
+              <p className="text-brand-gray font-sans">
+                Des packs prêts à l'emploi, parfaitement dosés pour tous vos événements.
+              </p>
             </div>
             <div className="text-center">
-              <div className="bg-brand-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-brand-green" size={32} />
+              <div className="w-16 h-16 mx-auto mb-6 bg-brand-gold rounded-full flex items-center justify-center">
+                <Eye className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-bold text-brand-text mb-2">Transparence</h3>
-              <p className="text-muted-foreground">Ingrédients et allergènes clairement indiqués</p>
+              <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif">Transparence</h3>
+              <p className="text-brand-gray font-sans">
+                Ingrédients et allergènes clairement indiqués pour chaque produit.
+              </p>
             </div>
             <div className="text-center">
-              <div className="bg-brand-orange/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Truck className="text-brand-orange" size={32} />
+              <div className="w-16 h-16 mx-auto mb-6 bg-brand-gold rounded-full flex items-center justify-center">
+                <Shield className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-bold text-brand-text mb-2">Sécurité</h3>
-              <p className="text-muted-foreground">Paiement à la livraison ou PayPal sécurisé</p>
+              <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif">Sécurité</h3>
+              <p className="text-brand-gray font-sans">
+                Paiement sécurisé PayPal ou à la livraison selon votre préférence.
+              </p>
             </div>
           </div>
           
-          {/* Delivery Banner */}
-          <div className="bg-white rounded-xl p-6 shadow-soft text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Clock className="text-brand-blue" size={24} />
-              <span className="font-bold text-brand-text text-lg">
-                Livraison Île-de-France sous 48h après confirmation de commande
-              </span>
-            </div>
+          {/* Delivery banner */}
+          <div className="mt-16 text-center bg-white rounded-2xl p-8 shadow-soft border border-brand-gold/20">
+            <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif">
+              ✨ Livraison Île-de-France sous 48h après confirmation
+            </h3>
+            <p className="text-brand-gray font-sans">
+              Service rapide et fiable pour tous vos événements
+            </p>
           </div>
         </div>
       </section>
 
       {/* Product Section */}
-      <section id="produit" className="py-16">
+      <section id="produit" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 font-serif">
               Produit du moment
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Le Pack Enfants - Disponible dès maintenant
-            </p>
+            <div className="w-24 h-1 bg-brand-gold mx-auto"></div>
           </div>
           
-          <div className="max-w-2xl mx-auto">
-            <ProductCard 
-              {...packEnfantsData}
+          <div className="max-w-4xl mx-auto">
+            <ProductCard
+              title="Pack Enfants"
+              price="54,99 €"
+              drinks={packEnfantsData.drinks}
+              isAvailable={true}
               onOrderClick={scrollToForm}
+              className="max-w-none"
             />
-            
-            {/* Nutritional Info */}
-            <div className="mt-8 bg-white rounded-xl p-6 shadow-soft">
-              <h4 className="font-bold text-brand-text mb-4">Informations nutritionnelles</h4>
-              <p className="text-muted-foreground text-sm">
-                Les valeurs nutritionnelles détaillées sont disponibles sur chaque emballage 
-                et peuvent varier selon les marques. Nos packs sont conçus pour offrir 
-                un équilibre entre plaisir et hydratation.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Coming Soon Packs */}
-      <section id="packs" className="py-16 bg-brand-gray-light">
+      <section id="packs" className="py-20 bg-brand-gray-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">
-              Nos autres packs
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 font-serif">
+              Bientôt disponibles
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Bientôt disponibles pour tous vos événements
+            <p className="text-xl text-brand-gray font-sans">
+              D'autres packs arrivent prochainement pour tous vos événements
             </p>
+            <div className="w-24 h-1 bg-brand-gold mx-auto mt-6"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {comingSoonPacks.map((pack, index) => (
-              <div key={index} className="bg-white/60 rounded-xl p-6 shadow-soft opacity-60">
-                <div className="text-4xl mb-4">{pack.icon}</div>
-                <h3 className="text-xl font-bold text-brand-text mb-2">{pack.title}</h3>
-                <p className="text-muted-foreground mb-4">{pack.description}</p>
-                <div className="bg-muted px-3 py-1 rounded-full inline-block">
-                  <span className="text-sm font-medium text-muted-foreground">Bientôt disponible</span>
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-soft border border-brand-black/10 opacity-70 hover:opacity-60 transition-smooth cursor-not-allowed">
+                <div className="text-4xl mb-6 text-center">{pack.icon}</div>
+                <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif text-center">{pack.title}</h3>
+                <p className="text-brand-gray mb-6 font-sans text-center">{pack.description}</p>
+                <div className="bg-brand-gray-light px-4 py-2 rounded-full text-center border border-brand-black/10">
+                  <span className="text-sm font-medium text-brand-gray font-sans">Bientôt disponible</span>
                 </div>
               </div>
             ))}
@@ -239,15 +247,16 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16">
+      <section id="faq" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-text mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 font-serif">
               Questions fréquentes
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-brand-gray font-sans">
               Tout ce que vous devez savoir sur nos packs
             </p>
+            <div className="w-24 h-1 bg-brand-gold mx-auto mt-6"></div>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-4">
@@ -259,7 +268,7 @@ const Index = () => {
       </section>
 
       {/* Form Section */}
-      <section id="formulaire" className="py-16 bg-brand-gray-light">
+      <section id="formulaire" className="py-20 bg-brand-gray-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <FormEmbed 
@@ -271,16 +280,16 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-border py-12">
+      <footer className="bg-brand-black text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
               <img 
-                src="/lovable-uploads/f4a29674-2d79-405a-88fe-31f2072d4996.png"
+                src="/logo-hellojaisoif.png"
                 alt="HelloJaiSoif Logo" 
-                className="h-12 w-auto mb-4"
+                className="h-16 w-auto mb-6 bg-white rounded-lg p-2"
               />
-              <p className="text-muted-foreground mb-4">
+              <p className="text-brand-white/80 mb-6 font-sans">
                 Des packs boissons prêts à partager pour tous vos événements.
               </p>
               <SocialLinks 
@@ -291,37 +300,37 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-bold text-brand-text mb-4">Liens utiles</h4>
-              <ul className="space-y-2">
-                <li><a href="/mentions-legales" className="text-muted-foreground hover:text-brand-blue transition-smooth">Mentions légales</a></li>
-                <li><a href="/cgv" className="text-muted-foreground hover:text-brand-blue transition-smooth">CGV</a></li>
-                <li><a href="/politique-confidentialite" className="text-muted-foreground hover:text-brand-blue transition-smooth">Politique de confidentialité</a></li>
-                <li><a href="/politique-cookies" className="text-muted-foreground hover:text-brand-blue transition-smooth">Politique cookies</a></li>
+              <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Liens utiles</h4>
+              <ul className="space-y-3">
+                <li><a href="/mentions-legales" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Mentions légales</a></li>
+                <li><a href="/cgv" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">CGV</a></li>
+                <li><a href="/politique-confidentialite" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique de confidentialité</a></li>
+                <li><a href="/politique-cookies" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique cookies</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-bold text-brand-text mb-4">Support</h4>
-              <p className="text-muted-foreground mb-2">Service client :</p>
+              <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Support</h4>
+              <p className="text-brand-white/80 mb-3 font-sans">Service client :</p>
               <a 
                 href="mailto:HelloJaisoif@gmail.com" 
-                className="text-brand-blue hover:underline font-medium"
+                className="text-brand-gold hover:underline font-medium font-sans"
               >
                 HelloJaisoif@gmail.com
               </a>
             </div>
             
             <div>
-              <h4 className="font-bold text-brand-text mb-4">Livraison</h4>
-              <p className="text-muted-foreground">
+              <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Livraison</h4>
+              <p className="text-brand-white/80 font-sans">
                 Île-de-France uniquement<br />
                 Sous 48h après confirmation
               </p>
             </div>
           </div>
           
-          <div className="border-t border-border pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 HelloJaiSoif. Tous droits réservés.</p>
+          <div className="border-t border-brand-gold/20 pt-8 text-center text-brand-white/60">
+            <p className="font-sans">&copy; 2024 HelloJaiSoif. Tous droits réservés.</p>
           </div>
         </div>
       </footer>

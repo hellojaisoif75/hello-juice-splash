@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         inter: ['Inter', 'system-ui', 'sans-serif'],
-        outfit: ['Outfit', 'system-ui', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,11 +54,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          blue: "hsl(var(--brand-blue))",
-          orange: "hsl(var(--brand-orange))",
-          green: "hsl(var(--brand-green))",
+          gold: "hsl(var(--brand-gold))",
+          black: "hsl(var(--brand-black))",
+          white: "hsl(var(--brand-white))",
           "gray-light": "hsl(var(--brand-gray-light))",
-          text: "hsl(var(--brand-text))",
+          "gray-medium": "hsl(var(--brand-gray-medium))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

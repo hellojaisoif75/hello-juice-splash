@@ -21,9 +21,9 @@ const CTAButton = ({
   const baseClasses = "font-semibold rounded-full transition-smooth inline-flex items-center justify-center";
   
   const variants = {
-    primary: "bg-brand-orange hover:bg-brand-orange/90 text-white shadow-button hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed",
-    secondary: "bg-brand-blue hover:bg-brand-blue/90 text-white shadow-soft hover:shadow-card disabled:opacity-50 disabled:cursor-not-allowed",
-    outline: "border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+    primary: "bg-brand-black hover:bg-brand-gold text-white shadow-elegant hover:shadow-button disabled:opacity-50 disabled:cursor-not-allowed font-sans font-semibold",
+    secondary: "bg-brand-gold hover:bg-brand-black text-white shadow-soft hover:shadow-elegant disabled:opacity-50 disabled:cursor-not-allowed font-sans font-semibold",
+    outline: "border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-white disabled:opacity-50 disabled:cursor-not-allowed font-sans font-medium"
   };
   
   const sizes = {

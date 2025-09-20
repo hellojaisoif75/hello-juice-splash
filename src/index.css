@@ -8,69 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 28% 17%;
-
+    /* Color Palette - HSL Values - Premium Minimalist Theme */
+    --background: 0 0% 100%;          /* Pure white */
+    --foreground: 0 0% 7%;            /* Deep black #111111 */
     --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-
+    --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
-
-    --primary: 200 100% 44%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;               /* Deep black for primary */
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 215 28% 17%;
-
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-
-    --accent: 153 60% 53%;
+    --secondary: 0 0% 96%;            /* Light gray #F5F5F5 */
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 45 85% 52%;             /* Gold accent #D4AF37 */
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 200 100% 44%;
-
-    --radius: 0.75rem;
-
-    /* HelloJaiSoif Brand Colors */
-    --brand-blue: 200 100% 44%;
-    --brand-orange: 25 100% 50%;
-    --brand-green: 153 60% 53%;
-    --brand-gray-light: 214 24% 97%;
-    --brand-text: 215 28% 17%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-green)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--brand-gray-light)));
-
-    /* Shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--brand-blue) / 0.1);
-    --shadow-card: 0 10px 25px -5px hsl(var(--brand-blue) / 0.1);
-    --shadow-button: 0 4px 14px 0 hsl(var(--brand-orange) / 0.25);
-
-    /* Animations */
+    --border: 0 0% 90%;               /* Light border */
+    --input: 0 0% 96%;
+    --ring: 45 85% 52%;               /* Gold ring */
+    --radius: 0.5rem;
+    
+    /* Brand Colors - Premium minimalist palette */
+    --brand-gold: 45 85% 52%;         /* #D4AF37 - Gold accent */
+    --brand-black: 0 0% 7%;           /* #111111 - Deep black */
+    --brand-white: 0 0% 100%;         /* #FFFFFF - Pure white */
+    --brand-gray-light: 0 0% 96%;     /* #F5F5F5 - Light gray */
+    --brand-gray-medium: 0 0% 60%;    /* Medium gray for subtle text */
+    
+    /* Gradients and Effects - Subtle and elegant */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-white)) 0%, hsl(var(--brand-gray-light)) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 0.3) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--brand-gold)) 0%, hsl(45 75% 45%) 100%);
+    
+    /* Shadows - Subtle and refined */
+    --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-button: 0 2px 4px rgba(212, 175, 55, 0.3);
+    --shadow-elegant: 0 4px 20px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -133,65 +120,96 @@ All colors MUST be HSL.
 }
 
 @layer components {
+  /* Gradient Applications */
   .gradient-hero {
     background: var(--gradient-hero);
   }
-  
+
   .gradient-card {
     background: var(--gradient-card);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
-  
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  /* Shadow Applications */
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
-  
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
-  
+
   .shadow-button {
     box-shadow: var(--shadow-button);
   }
-  
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Smooth Transitions */
   .transition-smooth {
     transition: var(--transition-smooth);
   }
 }
 
 @layer utilities {
-  .text-brand {
-    color: hsl(var(--brand-text));
+  /* Premium Brand Utilities */
+
+  /* Background Colors */
+  .bg-brand-gold {
+    background-color: hsl(var(--brand-gold));
   }
-  
-  .bg-brand-blue {
-    background-color: hsl(var(--brand-blue));
+
+  .bg-brand-black {
+    background-color: hsl(var(--brand-black));
   }
-  
-  .bg-brand-orange {
-    background-color: hsl(var(--brand-orange));
+
+  .bg-brand-white {
+    background-color: hsl(var(--brand-white));
   }
-  
-  .bg-brand-green {
-    background-color: hsl(var(--brand-green));
-  }
-  
+
   .bg-brand-gray-light {
     background-color: hsl(var(--brand-gray-light));
   }
-  
-  .text-brand-blue {
-    color: hsl(var(--brand-blue));
+
+  /* Text Colors */
+  .text-brand-gold {
+    color: hsl(var(--brand-gold));
   }
-  
-  .text-brand-orange {
-    color: hsl(var(--brand-orange));
+
+  .text-brand-black {
+    color: hsl(var(--brand-black));
   }
-  
-  .text-brand-green {
-    color: hsl(var(--brand-green));
+
+  .text-brand-white {
+    color: hsl(var(--brand-white));
   }
-  
-  .border-brand-blue {
-    border-color: hsl(var(--brand-blue));
+
+  .text-brand-gray {
+    color: hsl(var(--brand-gray-medium));
+  }
+
+  /* Border Colors */
+  .border-brand-gold {
+    border-color: hsl(var(--brand-gold));
+  }
+
+  .border-brand-black {
+    border-color: hsl(var(--brand-black));
+  }
+
+  /* Typography Classes */
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
