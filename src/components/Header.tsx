@@ -36,7 +36,7 @@ const Header = () => {
               <img 
                 src="/hellojaisoif-logo.png"
                 alt="HelloJaiSoif Logo" 
-                className="h-16 w-auto max-w-none"
+                className="h-20 w-auto max-w-none"
               />
             </a>
           </div>
