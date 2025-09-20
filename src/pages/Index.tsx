@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import FormEmbed from "@/components/FormEmbed";
 import SocialLinks from "@/components/SocialLinks";
 import FAQItem from "@/components/FAQItem";
+import ScrollToTop from "@/components/ScrollToTop";
 import heroImage from "@/assets/hero-drinks.jpg";
 
 const Index = () => {
@@ -306,6 +307,7 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Liens utiles</h4>
               <ul className="space-y-3">
+                <li><a href="/" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Accueil</a></li>
                 <li><a href="/mentions-legales" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Mentions légales</a></li>
                 <li><a href="/cgv" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">CGV</a></li>
                 <li><a href="/politique-confidentialite" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique de confidentialité</a></li>
@@ -338,6 +340,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
   );
 };

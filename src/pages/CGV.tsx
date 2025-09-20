@@ -1,4 +1,6 @@
 import Header from "@/components/Header";
+import CTAButton from "@/components/CTAButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const CGV = () => {
   return (
@@ -8,6 +10,12 @@ const CGV = () => {
       <div className="pt-20 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <h1 className="text-3xl md:text-4xl font-bold text-brand-text mb-8">Conditions Générales de Vente</h1>
+          
+          <div className="text-center mb-8">
+            <CTAButton variant="primary" onClick={() => window.location.href = '/'}>
+              Retour à l'accueil
+            </CTAButton>
+          </div>
           
           <div className="prose prose-lg max-w-none space-y-6">
             <section>
@@ -93,6 +101,7 @@ const CGV = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

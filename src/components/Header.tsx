@@ -31,14 +31,14 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/logo-hellojaisoif.png"
-              alt="HelloJaiSoif Logo" 
-              className="h-20 w-auto cursor-pointer"
-              onClick={() => scrollToSection("hero")}
-            />
+            <a href="/" className="hover:opacity-80 transition-opacity">
+              <img 
+                src="/lovable-uploads/52ad253b-07a3-477f-bba4-891012f9dcf3.png"
+                alt="HelloJaiSoif Logo" 
+                className="h-12 w-auto"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
