@@ -23,25 +23,29 @@ const Index = () => {
         name: "Capri-Sun",
         description: "Eau, jus de fruits à base de concentrés (orange, citron, pomme, etc.), sucre, arômes naturels",
         allergens: "Aucun allergène majeur",
-        volume: "20 cl"
+        volume: "20 cl",
+        quantity: "40 unités"
       },
       {
-        name: "Évian", 
-        description: "Eau minérale naturelle",
-        allergens: "Aucun",
-        volume: "33 cl"
-      },
-      {
-        name: "Cristalline",
-        description: "Eau de source",
-        allergens: "Aucun", 
-        volume: "33 cl"
+        name: "Fruitshoot", 
+        description: "Boisson aux fruits",
+        allergens: "Aucun allergène majeur",
+        volume: "20 cl",
+        quantity: "24 unités"
       },
       {
         name: "Jus de pomme",
         description: "100% jus de pomme (à base de concentré selon marque)",
         allergens: "Aucun",
-        volume: "20 cl"
+        volume: "20 cl",
+        quantity: "24 unités"
+      },
+      {
+        name: "Évian ou Cristalline",
+        description: "Eau minérale naturelle ou eau de source",
+        allergens: "Aucun", 
+        volume: "33 cl",
+        quantity: "24 unités"
       }
     ]
   };
@@ -113,7 +117,7 @@ const Index = () => {
               </h1>
               <p className="text-xl md:text-2xl text-brand-gray mb-8 font-sans max-w-2xl">
                 Commandez aujourd'hui le Pack Enfants (54,99 € TTC).<br/>
-                Les autres packs arrivent bientôt.
+                Vos autres packs arrivent bientôt.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <CTAButton 
@@ -122,7 +126,7 @@ const Index = () => {
                   onClick={scrollToForm}
                   className="text-lg px-10 py-4"
                 >
-                  Commander maintenant
+                  Commandez maintenant
                 </CTAButton>
               </div>
               
@@ -272,7 +276,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <FormEmbed 
-              googleFormUrl={import.meta.env.VITE_GFORM_URL}
+              googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSdfgYDy-dtQOQMuCRreOxlHu4FlK4vNcvZUXmRXM0gRGwJ7YQ/viewform?usp=sf_link"
               paypalUrl={import.meta.env.VITE_PAYPAL_LINK}
             />
           </div>

@@ -6,6 +6,7 @@ interface DrinkItem {
   description: string;
   allergens: string;
   volume: string;
+  quantity?: string;
 }
 
 interface ProductCardProps {
@@ -50,9 +51,16 @@ const ProductCard = ({
             <div key={index} className="bg-white rounded-lg p-6 border border-brand-black/10 shadow-soft">
               <div className="flex items-start justify-between mb-3">
                 <h5 className="font-semibold text-brand-black font-sans text-lg">{drink.name}</h5>
-                <Badge variant="outline" className="text-xs border-brand-gold text-brand-gold font-sans">
-                  {drink.volume}
-                </Badge>
+                <div className="flex gap-2">
+                  {drink.quantity && (
+                    <Badge variant="outline" className="text-xs border-brand-black text-brand-black font-sans font-medium">
+                      {drink.quantity}
+                    </Badge>
+                  )}
+                  <Badge variant="outline" className="text-xs border-brand-gold text-brand-gold font-sans">
+                    {drink.volume}
+                  </Badge>
+                </div>
               </div>
               <p className="text-sm text-brand-gray mb-3 font-sans">{drink.description}</p>
               <p className="text-sm font-medium text-brand-black font-sans">
