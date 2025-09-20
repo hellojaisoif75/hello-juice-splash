@@ -1,5 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import CTAButton from "./CTAButton";
+import capriSunImage from "@/assets/capri-sun.png";
+import fruitShootImage from "@/assets/fruitshoot.jpg";
+import jusPommeImage from "@/assets/jus-pomme.jpg";
+import cristallineImage from "@/assets/cristalline.png";
 
 interface DrinkItem {
   name: string;
@@ -45,29 +49,59 @@ const ProductCard = ({
       )}
       
       {drinks && (
-        <div className="space-y-6 mb-8">
-          <h4 className="font-semibold text-brand-black mb-4 font-serif text-xl">Composition du pack :</h4>
-          {drinks.map((drink, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 border border-brand-black/10 shadow-soft">
-              <div className="flex items-start justify-between mb-3">
-                <h5 className="font-semibold text-brand-black font-sans text-lg">{drink.name}</h5>
-                <div className="flex gap-2">
-                  {drink.quantity && (
-                    <Badge variant="outline" className="text-xs border-brand-black text-brand-black font-sans font-medium">
-                      {drink.quantity}
-                    </Badge>
-                  )}
-                  <Badge variant="outline" className="text-xs border-brand-gold text-brand-gold font-sans">
-                    {drink.volume}
-                  </Badge>
-                </div>
-              </div>
-              <p className="text-sm text-brand-gray mb-3 font-sans">{drink.description}</p>
-              <p className="text-sm font-medium text-brand-black font-sans">
-                <span className="font-semibold">Allergènes :</span> {drink.allergens}
-              </p>
+        <div className="mb-8">
+          <div className="grid grid-cols-5 gap-4 mb-6">
+            {/* Capri-Sun */}
+            <div className="bg-white rounded-xl p-4 border border-brand-black/10 shadow-soft text-center">
+              <img src={capriSunImage} alt="Capri-Sun" className="w-full h-32 object-contain mb-3" />
+              <h5 className="font-semibold text-brand-black font-sans text-sm mb-2">Capri-Sun</h5>
+              <p className="text-xs text-brand-gray font-sans mb-1">×40 (20 cl)</p>
             </div>
-          ))}
+            
+            {/* Fruit Shoot */}
+            <div className="bg-white rounded-xl p-4 border border-brand-black/10 shadow-soft text-center">
+              <img src={fruitShootImage} alt="Fruit Shoot" className="w-full h-32 object-contain mb-3" />
+              <h5 className="font-semibold text-brand-black font-sans text-sm mb-2">Fruit Shoot</h5>
+              <p className="text-xs text-brand-gray font-sans mb-1">×24 (20 cl)</p>
+            </div>
+            
+            {/* Jus de pomme */}
+            <div className="bg-white rounded-xl p-4 border border-brand-black/10 shadow-soft text-center">
+              <img src={jusPommeImage} alt="Jus de pomme" className="w-full h-32 object-contain mb-3" />
+              <h5 className="font-semibold text-brand-black font-sans text-sm mb-2">Jus de pomme</h5>
+              <p className="text-xs text-brand-gray font-sans mb-1">×24 (20 cl)</p>
+            </div>
+            
+            {/* Évian ou Cristalline */}
+            <div className="bg-white rounded-xl p-4 border border-brand-black/10 shadow-soft text-center">
+              <img src={cristallineImage} alt="Évian ou Cristalline" className="w-full h-32 object-contain mb-3" />
+              <h5 className="font-semibold text-brand-black font-sans text-sm mb-2">Évian ou Cristalline</h5>
+              <p className="text-xs text-brand-gray font-sans mb-1">×24 (33 cl)</p>
+            </div>
+            
+            {/* Eau 1,5 L OFFERT */}
+            <div className="bg-white rounded-xl p-4 border border-brand-black/10 shadow-soft text-center relative">
+              <div className="absolute -top-2 -right-2 z-10">
+                <Badge className="bg-brand-gold text-white border-0 font-sans font-bold text-xs px-2 py-1">
+                  OFFERT
+                </Badge>
+              </div>
+              <img src={cristallineImage} alt="Eau 1,5 L" className="w-full h-32 object-contain mb-3" />
+              <h5 className="font-semibold text-brand-black font-sans text-sm mb-2">Eau 1,5 L</h5>
+              <p className="text-xs text-brand-gray font-sans mb-1">×2 OFFERT</p>
+            </div>
+          </div>
+          
+          {/* Gift ribbon for cristalline packs */}
+          <div className="bg-brand-gold/10 border border-brand-gold/20 rounded-xl p-4 text-center">
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-2xl">🎁</span>
+              <p className="text-brand-gold font-semibold font-sans">
+                Cadeau offert : 2 packs de Cristalline 1,5L
+              </p>
+              <span className="text-2xl">🎁</span>
+            </div>
+          </div>
         </div>
       )}
       
