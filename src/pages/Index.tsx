@@ -6,7 +6,7 @@ import FormEmbed from "@/components/FormEmbed";
 import SocialLinks from "@/components/SocialLinks";
 import FAQItem from "@/components/FAQItem";
 import ScrollToTop from "@/components/ScrollToTop";
-import heroImage from "@/assets/hero-drinks.jpg";
+import heroImage from "@/assets/hero-cocktails.png";
 
 const Index = () => {
   const scrollToForm = () => {
