@@ -4,6 +4,7 @@ import capriSunImage from "@/assets/capri-sun.png";
 import fruitShootImage from "@/assets/fruitshoot.jpg";
 import jusPommeImage from "@/assets/jus-pomme.jpg";
 import cristallineImage from "@/assets/cristalline.png";
+import eauCadeauImage from "@/assets/eau-cadeau.png";
 
 interface DrinkItem {
   name: string;
@@ -86,7 +87,7 @@ const ProductCard = ({
                   OFFERT
                 </Badge>
               </div>
-              <img src={cristallineImage} alt="Eau 1,5 L" className="w-full h-32 object-contain mb-3" />
+              <img src={eauCadeauImage} alt="Eau 1,5 L avec cadeau" className="w-full h-32 object-contain mb-3" />
               <h5 className="font-semibold text-brand-black font-sans text-sm mb-2">Eau 1,5 L</h5>
               <p className="text-xs text-brand-gray font-sans mb-1">×2 OFFERT</p>
             </div>
