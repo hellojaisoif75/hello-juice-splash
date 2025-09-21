@@ -338,9 +338,7 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Support</h4>
               <p className="text-brand-white/80 mb-3 font-sans">Service client :</p>
-              <a href="mailto:HelloJaisoif@gmail.com" className="text-brand-gold hover:underline font-medium font-sans">
-                HelloJaisoif@gmail.com
-              </a>
+              <a href="mailto:HelloJaisoif@gmail.com" className="text-brand-gold hover:underline font-medium font-sans">Hellojaisoif75@gmail.com</a>
             </div>
             
             <div>
