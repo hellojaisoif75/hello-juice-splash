@@ -153,9 +153,7 @@ const ProductCard = ({
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-semibold text-brand-black font-sans text-sm">
-                      Cristalline 33 cl
-                    </td>
+                    <td className="px-4 py-3 font-semibold text-brand-black font-sans text-sm">Cristaline 33 cl</td>
                     <td className="px-4 py-3 text-brand-gray font-sans text-sm">
                       Eau de source (Ca 68 mg/L, Mg 11 mg/L, Cl⁻ 28 mg/L...).
                     </td>
