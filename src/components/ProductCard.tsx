@@ -88,9 +88,7 @@ const ProductCard = ({
           <div className="bg-brand-gold/10 border border-brand-gold/20 rounded-xl p-3 sm:p-4 text-center mb-8">
             <div className="flex items-center justify-center gap-2">
               <span className="text-xl sm:text-2xl">🎁</span>
-              <p className="text-brand-gold font-semibold font-sans text-sm sm:text-base">
-                Cadeau offert : 2 packs de Cristalline 1,5L
-              </p>
+              <p className="text-brand-gold font-semibold font-sans text-sm sm:text-base">Cadeau offert : 2 packs de Cristaline 1,5L</p>
               <span className="text-xl sm:text-2xl">🎁</span>
             </div>
           </div>
