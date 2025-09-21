@@ -45,19 +45,19 @@ npm run dev
 Copiez `.env.example` vers `.env.local` et configurez :
 
 ```env
-# Google Forms - Remplacez par votre URL de formulaire
-NEXT_PUBLIC_GFORM_URL=https://docs.google.com/forms/d/e/VOTRE_FORM_ID/viewform?embedded=true
+# Google Forms - Remplacez par votre URL de formulaire intégrable
+VITE_GFORM_URL=https://docs.google.com/forms/d/e/VOTRE_FORM_ID/viewform?embedded=true
 
 # PayPal - Remplacez par votre lien de paiement
-NEXT_PUBLIC_PAYPAL_LINK=https://www.paypal.com/paypalme/VOTRE_COMPTE
+VITE_PAYPAL_LINK=https://www.paypal.com/paypalme/VOTRE_COMPTE
 
 # Réseaux sociaux - Remplacez par vos URLs
-NEXT_PUBLIC_IG_URL=https://instagram.com/VOTRE_COMPTE
-NEXT_PUBLIC_FB_URL=https://facebook.com/VOTRE_PAGE
-NEXT_PUBLIC_TT_URL=https://tiktok.com/@VOTRE_COMPTE
+VITE_IG_URL=https://instagram.com/VOTRE_COMPTE
+VITE_FB_URL=https://facebook.com/VOTRE_PAGE
+VITE_TT_URL=https://tiktok.com/@VOTRE_COMPTE
 
 # Google Analytics (optionnel)
-NEXT_PUBLIC_GA_ID=G-VOTRE_ID
+VITE_GA_ID=G-VOTRE_ID
 ```
 
 ### Configuration Google Forms
