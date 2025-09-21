@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Packs from "./pages/Packs";
 import PackEnfants from "./pages/PackEnfants";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGV from "./pages/CGV";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/packs" element={<Packs />} />
           <Route path="/packs/enfants" element={<PackEnfants />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgv" element={<CGV />} />
           <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />

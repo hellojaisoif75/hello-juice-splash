@@ -55,14 +55,14 @@ const Header = () => {
             >
               Packs
             </a>
-            <button 
-              onClick={() => scrollToSection("footer")}
+            <a 
+              href="/contact"
               className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
             >
               Contact
-            </button>
+            </a>
             <a
-              href="/packs/enfants"
+              href="/packs"
               className="bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant font-sans"
             >
               Commander
@@ -103,14 +103,15 @@ const Header = () => {
                 >
                   Packs
                 </a>
-                <button 
-                  onClick={() => scrollToSection("footer")}
+                <a 
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
                 >
                   Contact
-                </button>
+                </a>
                 <a 
-                  href="/packs/enfants"
+                  href="/packs"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant mt-4 font-sans inline-block text-center"
                 >
