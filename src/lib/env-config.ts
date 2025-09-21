@@ -13,11 +13,11 @@ interface EnvConfig {
 }
 
 const DEFAULT_VALUES: EnvConfig = {
-  GFORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSexample/viewform?embedded=true",
+  GFORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSdfgYDy-dtQOQMuCRreOxlHu4FlK4vNcvZUXmRXM0gRGwJ7YQ/viewform?embedded=true",
   PAYPAL_LINK: "https://www.paypal.com/paypalme/hellojaisoif",
   IG_URL: "https://www.instagram.com/hellojaisoif/",
-  FB_URL: "https://facebook.com/hellojaisoif",
-  TT_URL: "https://tiktok.com/@hellojaisoif",
+  FB_URL: "https://www.facebook.com/hellojaisoif",
+  TT_URL: "https://www.tiktok.com/@hellojaisoif",
   GA_ID: undefined,
 };
 
