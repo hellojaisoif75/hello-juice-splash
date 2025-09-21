@@ -5,7 +5,6 @@ import fruitShootImage from "@/assets/fruitshoot.jpg";
 import jusPommeImage from "@/assets/jus-pomme.jpg";
 import cristallineImage from "@/assets/cristalline-white-bg.png";
 import eauCadeauImage from "@/assets/eau-cadeau.png";
-
 interface DrinkItem {
   name: string;
   description: string;
@@ -13,7 +12,6 @@ interface DrinkItem {
   volume: string;
   quantity?: string;
 }
-
 interface ProductCardProps {
   title: string;
   price?: string;
@@ -22,35 +20,28 @@ interface ProductCardProps {
   onOrderClick?: () => void;
   className?: string;
 }
-
-const ProductCard = ({ 
-  title, 
-  price, 
-  drinks, 
-  isAvailable = true, 
+const ProductCard = ({
+  title,
+  price,
+  drinks,
+  isAvailable = true,
   onOrderClick,
-  className 
+  className
 }: ProductCardProps) => {
-  return (
-    <div className={`gradient-card rounded-2xl p-8 shadow-elegant transition-smooth hover:shadow-card border border-brand-black/10 ${!isAvailable ? 'opacity-60' : ''} ${className}`}>
+  return <div className={`gradient-card rounded-2xl p-8 shadow-elegant transition-smooth hover:shadow-card border border-brand-black/10 ${!isAvailable ? 'opacity-60' : ''} ${className}`}>
       <div className="flex items-start justify-between mb-6">
         <h3 className="text-3xl font-bold text-brand-black font-serif">{title}</h3>
-        {!isAvailable && (
-          <Badge variant="secondary" className="bg-muted text-brand-gray border border-brand-black/20 font-sans">
+        {!isAvailable && <Badge variant="secondary" className="bg-muted text-brand-gray border border-brand-black/20 font-sans">
             Bientôt disponible
-          </Badge>
-        )}
+          </Badge>}
       </div>
       
-      {price && (
-        <div className="mb-8">
+      {price && <div className="mb-8">
           <span className="text-4xl font-bold text-brand-black font-serif">{price}</span>
           <span className="text-brand-gray ml-2 font-sans">TTC</span>
-        </div>
-      )}
+        </div>}
       
-      {drinks && (
-        <div className="mb-8">
+      {drinks && <div className="mb-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-6">
             {/* Capri-Sun */}
             <div className="bg-white rounded-xl p-3 sm:p-4 border border-brand-black/10 shadow-soft text-center">
@@ -76,7 +67,7 @@ const ProductCard = ({
             {/* Évian ou Cristalline */}
             <div className="bg-white rounded-xl p-3 sm:p-4 border border-brand-black/10 shadow-soft text-center">
               <img src={cristallineImage} alt="Évian ou Cristalline" className="w-full h-24 sm:h-32 object-contain mb-2 sm:mb-3" />
-              <h5 className="font-semibold text-brand-black font-sans text-xs sm:text-sm mb-1 sm:mb-2">Évian ou Cristalline</h5>
+              <h5 className="font-semibold text-brand-black font-sans text-xs sm:text-sm mb-1 sm:mb-2">Évian ou Cristaline</h5>
               <p className="text-xs text-brand-gray font-sans mb-1">×24 (33 cl)</p>
             </div>
             
@@ -88,7 +79,7 @@ const ProductCard = ({
                 </Badge>
               </div>
               <img src={eauCadeauImage} alt="Pack Cristalline 6 x 1,5 L x 2 Offert" className="w-full h-24 sm:h-32 object-contain mb-2 sm:mb-3" />
-              <h5 className="font-semibold text-brand-black font-sans text-xs sm:text-sm mb-1 sm:mb-2">Pack Cristalline 6 x 1,5 L</h5>
+              <h5 className="font-semibold text-brand-black font-sans text-xs sm:text-sm mb-1 sm:mb-2">Pack Cristaline 6 x 1,5 L</h5>
               <p className="text-xs text-brand-gray font-sans mb-1">×2 OFFERT</p>
             </div>
           </div>
@@ -178,20 +169,11 @@ const ProductCard = ({
               </table>
             </div>
           </div>
-        </div>
-      )}
+        </div>}
       
-      {isAvailable && onOrderClick && (
-        <CTAButton 
-          variant="primary" 
-          onClick={onOrderClick}
-          className="w-full"
-        >
+      {isAvailable && onOrderClick && <CTAButton variant="primary" onClick={onOrderClick} className="w-full">
           Commander ce pack
-        </CTAButton>
-      )}
-    </div>
-  );
+        </CTAButton>}
+    </div>;
 };
-
 export default ProductCard;
