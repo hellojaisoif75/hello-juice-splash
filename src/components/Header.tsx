@@ -80,34 +80,42 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-md border-t border-brand-gold/20 shadow-elegant">
-            <div className="px-4 py-4 space-y-3">
-              <button 
-                onClick={() => scrollToSection("produit")}
-                className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
-              >
-                Produit
-              </button>
-              <button 
-                onClick={() => scrollToSection("packs")}
-                className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
-              >
-                Nos Packs
-              </button>
-              <button 
-                onClick={() => scrollToSection("faq")}
-                className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
-              >
-                FAQ
-              </button>
-              <button 
-                onClick={() => scrollToSection("formulaire")}
-                className="w-full bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant mt-4 font-sans"
-              >
-                Commander
-              </button>
+          <>
+            {/* Overlay */}
+            <div 
+              className="md:hidden fixed inset-0 bg-black/50 z-40"
+              onClick={() => setIsMobileMenuOpen(false)}
+            ></div>
+            {/* Menu */}
+            <div className="md:hidden fixed top-20 left-0 right-0 bg-white border-t border-brand-gold/20 shadow-elegant z-50">
+              <div className="px-4 py-4 space-y-3">
+                <button 
+                  onClick={() => scrollToSection("produit")}
+                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+                >
+                  Produit
+                </button>
+                <button 
+                  onClick={() => scrollToSection("packs")}
+                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+                >
+                  Nos Packs
+                </button>
+                <button 
+                  onClick={() => scrollToSection("faq")}
+                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+                >
+                  FAQ
+                </button>
+                <button 
+                  onClick={() => scrollToSection("formulaire")}
+                  className="w-full bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant mt-4 font-sans"
+                >
+                  Commander
+                </button>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </header>
