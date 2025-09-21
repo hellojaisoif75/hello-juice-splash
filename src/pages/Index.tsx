@@ -190,8 +190,9 @@ const Index = () => {
           
           {/* Delivery banner */}
           <div className="mt-16 text-center bg-white rounded-2xl p-8 shadow-soft border border-brand-gold/20">
-            <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif">
-              ✨ Livraison Île-de-France sous 48h après confirmation
+            <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif flex items-center justify-center gap-2">
+              <Truck className="w-6 h-6 text-brand-gold" />
+              Livraison Île-de-France sous 48h après confirmation
             </h3>
             <p className="text-brand-gray font-sans">
               Service rapide et fiable pour tous vos événements
