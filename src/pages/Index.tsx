@@ -6,6 +6,8 @@ import FormEmbed from "@/components/FormEmbed";
 import SocialLinks from "@/components/SocialLinks";
 import FAQItem from "@/components/FAQItem";
 import ScrollToTop from "@/components/ScrollToTop";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import { envConfig } from "@/lib/env-config";
 import heroImage from "@/assets/hero-cocktails.png";
 
 const Index = () => {
@@ -104,8 +106,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <ErrorBoundary>
+      <div className="min-h-screen bg-white">
+        <Header />
       
       {/* Hero Section */}
       <section id="hero" className="pt-24 pb-16 bg-white">
@@ -353,7 +356,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <FormEmbed 
               googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSdfgYDy-dtQOQMuCRreOxlHu4FlK4vNcvZUXmRXM0gRGwJ7YQ/viewform?usp=sf_link"
-              paypalUrl={import.meta.env.VITE_PAYPAL_LINK}
+              paypalUrl={envConfig.PAYPAL_LINK}
             />
           </div>
         </div>
@@ -373,9 +376,9 @@ const Index = () => {
                 Des packs boissons prêts à partager pour tous vos événements.
               </p>
               <SocialLinks 
-                instagramUrl={import.meta.env.VITE_IG_URL}
-                facebookUrl={import.meta.env.VITE_FB_URL}
-                tiktokUrl={import.meta.env.VITE_TT_URL}
+                instagramUrl={envConfig.IG_URL}
+                facebookUrl={envConfig.FB_URL}
+                tiktokUrl={envConfig.TT_URL}
               />
             </div>
             
@@ -414,9 +417,10 @@ const Index = () => {
             <p className="font-sans">&copy; 2024 HelloJaiSoif. Tous droits réservés.</p>
           </div>
         </div>
-      </footer>
-      <ScrollToTop />
-    </div>
+       </footer>
+       <ScrollToTop />
+     </div>
+    </ErrorBoundary>
   );
 };
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CTAButton from "./CTAButton";
+import { validateIframeSrc, getSecureExternalLinkProps } from "@/lib/security-utils";
+import { envConfig } from "@/lib/env-config";
 
 interface FormEmbedProps {
   googleFormUrl?: string;
@@ -7,13 +9,19 @@ interface FormEmbedProps {
 }
 
 const FormEmbed = ({ 
-  googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSexample/viewform?embedded=true",
-  paypalUrl = "https://www.paypal.com/paypalme/hellojaisoif" 
+  googleFormUrl = envConfig.GFORM_URL,
+  paypalUrl = envConfig.PAYPAL_LINK
 }: FormEmbedProps) => {
   const [showPaypalButton, setShowPaypalButton] = useState(false);
 
+  // Validate iframe source for security
+  const isValidIframeSrc = validateIframeSrc(googleFormUrl);
+  const paypalLinkProps = getSecureExternalLinkProps(paypalUrl);
+
   const handlePaypalClick = () => {
-    window.open(paypalUrl, '_blank', 'noopener,noreferrer');
+    if (paypalLinkProps.href !== '#') {
+      window.open(paypalUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -29,21 +37,29 @@ const FormEmbed = ({
       </div>
       
       <div className="relative">
-        <iframe
-          src={googleFormUrl}
-          width="100%"
-          height="800"
-          frameBorder="0"
-          marginHeight={0}
-          marginWidth={0}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          sandbox="allow-forms allow-scripts allow-same-origin"
-          className="rounded-lg"
-          title="Formulaire de commande HelloJaiSoif"
-        >
-          Chargement en cours...
-        </iframe>
+        {isValidIframeSrc ? (
+          <iframe
+            src={googleFormUrl}
+            width="100%"
+            height="800"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            sandbox="allow-forms allow-scripts allow-same-origin allow-top-navigation-by-user-activation"
+            className="rounded-lg"
+            title="Formulaire de commande HelloJaiSoif"
+          >
+            Chargement en cours...
+          </iframe>
+        ) : (
+          <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8 text-center">
+            <p className="text-destructive font-medium">
+              Le formulaire n'est pas disponible pour le moment. Veuillez nous contacter directement.
+            </p>
+          </div>
+        )}
       </div>
       
       <div className="mt-6 p-6 bg-brand-gray-light rounded-lg">
