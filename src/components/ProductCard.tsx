@@ -3,7 +3,7 @@ import CTAButton from "./CTAButton";
 import capriSunImage from "@/assets/capri-sun.png";
 import fruitShootImage from "@/assets/fruitshoot.jpg";
 import jusPommeImage from "@/assets/jus-pomme.jpg";
-import cristallineImage from "@/assets/cristalline-white-bg.png";
+import cristallineImage from "@/assets/bouchon-sport.jfif";
 import eauCadeauImage from "@/assets/eau-cadeau.png";
 interface DrinkItem {
   name: string;
