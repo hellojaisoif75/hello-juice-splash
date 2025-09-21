@@ -31,7 +31,7 @@ const Home = () => {
                     href="/packs"
                     className="inline-flex items-center justify-center bg-brand-black hover:bg-brand-gold text-white px-10 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
                   >
-                    Commander maintenant
+                    Commandez maintenant
                   </a>
                 </div>
                 
