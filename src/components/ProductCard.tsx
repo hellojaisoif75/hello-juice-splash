@@ -67,7 +67,7 @@ const ProductCard = ({
             {/* Évian ou Cristalline */}
             <div className="bg-white rounded-xl p-3 sm:p-4 border border-brand-black/10 shadow-soft text-center">
               <img src={cristallineImage} alt="Évian ou Cristalline" className="w-full h-24 sm:h-32 object-contain mb-2 sm:mb-3" />
-              <h5 className="font-semibold text-brand-black font-sans text-xs sm:text-sm mb-1 sm:mb-2">Évian ou Cristaline</h5>
+              <h5 className="font-semibold text-brand-black font-sans text-xs sm:text-sm mb-1 sm:mb-2">Évian ou Cristaline (Bouchon Sport)</h5>
               <p className="text-xs text-brand-gray font-sans mb-1">×24 (33 cl)</p>
             </div>
             
