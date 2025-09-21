@@ -14,64 +14,73 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+    if (sectionId === 'contact') {
+      // Scroll to footer contact section
+      const element = document.querySelector('footer');
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth border-b ${
         isScrolled 
-          ? "bg-white/98 backdrop-blur-md shadow-soft border-brand-gold/20" 
-          : "bg-white/90 backdrop-blur-sm border-transparent"
+          ? "bg-brand-black/95 backdrop-blur-md shadow-elegant border-brand-gold/30" 
+          : "bg-brand-black/90 backdrop-blur-sm border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center">
-            <a href="/" className="hover:opacity-80 transition-opacity">
-              <img 
-                src="/hellojaisoif-logo.png"
-                alt="HelloJaiSoif Logo" 
-                className="h-20 w-auto max-w-none"
-              />
-            </a>
-          </div>
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href="/" className="flex items-center space-x-2">
+            <img 
+              src="/hellojaisoif-logo.png" 
+              alt="HelloJaiSoif" 
+              className="h-10 w-auto brightness-0 invert"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection("produit")}
-              className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
+            <a 
+              href="/" 
+              className="text-white/90 hover:text-brand-gold transition-smooth font-medium font-inter"
             >
-              Produit
-            </button>
-            <button 
-              onClick={() => scrollToSection("packs")}
-              className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
+              Accueil
+            </a>
+            <a 
+              href="/packs" 
+              className="text-white/90 hover:text-brand-gold transition-smooth font-medium font-inter"
             >
-              Nos Packs
-            </button>
-            <button 
-              onClick={() => scrollToSection("faq")}
-              className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
+              Packs
+            </a>
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
+              className="text-white/90 hover:text-brand-gold transition-smooth font-medium font-inter"
             >
-              FAQ
-            </button>
-            <button 
-              onClick={() => scrollToSection("formulaire")}
-              className="bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant font-sans"
-            >
-              Commander
-            </button>
+              Contact
+            </a>
           </nav>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-brand-black hover:text-brand-gold transition-smooth"
+            className="md:hidden p-2 text-white hover:text-brand-gold transition-smooth"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,32 +96,30 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             ></div>
             {/* Menu */}
-            <div className="md:hidden fixed top-20 left-0 right-0 bg-white border-t border-brand-gold/20 shadow-elegant z-50">
-              <div className="px-4 py-4 space-y-3">
-                <button 
-                  onClick={() => scrollToSection("produit")}
-                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+            <div className="md:hidden fixed top-16 left-0 right-0 bg-brand-black border-t border-brand-gold/30 shadow-elegant z-50">
+              <div className="px-4 py-4 space-y-1">
+                <a 
+                  href="/"
+                  className="block px-3 py-2 text-base font-medium text-white/90 hover:text-brand-gold font-inter"
                 >
-                  Produit
-                </button>
-                <button 
-                  onClick={() => scrollToSection("packs")}
-                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+                  Accueil
+                </a>
+                <a 
+                  href="/packs"
+                  className="block px-3 py-2 text-base font-medium text-white/90 hover:text-brand-gold font-inter"
                 >
-                  Nos Packs
-                </button>
-                <button 
-                  onClick={() => scrollToSection("faq")}
-                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+                  Packs
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("contact");
+                  }}
+                  className="block px-3 py-2 text-base font-medium text-white/90 hover:text-brand-gold font-inter"
                 >
-                  FAQ
-                </button>
-                <button 
-                  onClick={() => scrollToSection("formulaire")}
-                  className="w-full bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant mt-4 font-sans"
-                >
-                  Commander
-                </button>
+                  Contact
+                </a>
               </div>
             </div>
           </>
