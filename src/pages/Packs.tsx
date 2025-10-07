@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -61,7 +62,7 @@ const Packs = () => {
             {/* Breadcrumbs */}
             <nav className="mb-8">
               <ol className="flex items-center space-x-2 text-sm text-brand-gray">
-                <li><a href="/" className="hover:text-brand-gold transition-smooth">Accueil</a></li>
+                <li><Link to="/" className="hover:text-brand-gold transition-smooth">Accueil</Link></li>
                 <li className="text-brand-gray">&gt;</li>
                 <li className="text-brand-black font-medium">Packs</li>
               </ol>
@@ -86,7 +87,7 @@ const Packs = () => {
               
               {/* Pack Enfants - Available */}
               <div className="bg-white rounded-2xl p-8 shadow-elegant border border-brand-gold/20 hover:shadow-card transition-smooth cursor-pointer group">
-                <a href="/packs/enfants" className="block">
+                <Link to="/packs/enfants" className="block">
                   <div className="text-5xl mb-6 text-center">{packEnfants.icon}</div>
                   <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif text-center group-hover:text-brand-gold transition-smooth">
                     {packEnfants.title}
@@ -101,7 +102,7 @@ const Packs = () => {
                   <div className="bg-brand-gold text-white px-6 py-3 rounded-full text-center font-medium hover:bg-brand-black transition-smooth">
                     <span className="font-sans">Voir le pack</span>
                   </div>
-                </a>
+                </Link>
               </div>
 
               {/* Coming Soon Packs */}
@@ -128,12 +129,12 @@ const Packs = () => {
             <p className="text-xl text-brand-gray mb-8 font-sans">
               Le Pack Enfants est disponible dès maintenant
             </p>
-            <a
-              href="/packs/enfants"
+            <Link
+              to="/packs/enfants"
               className="inline-flex items-center justify-center bg-brand-black hover:bg-brand-gold text-white px-8 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
             >
               Commander le Pack Enfants
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -142,7 +143,7 @@ const Packs = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
               <div>
-                <img src="/hellojaisoif-logo.png" alt="HelloJaiSoif Logo" className="h-16 w-auto mb-6 bg-white rounded-lg p-2" />
+                <img src={`${import.meta.env.BASE_URL}hellojaisoif-logo.png`} alt="HelloJaiSoif Logo" className="h-16 w-auto mb-6 bg-white rounded-lg p-2" />
                 <p className="text-brand-white/80 mb-6 font-sans">
                   Des packs boissons prêts à partager pour tous vos événements.
                 </p>
@@ -152,12 +153,12 @@ const Packs = () => {
               <div>
                 <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Liens utiles</h4>
                 <ul className="space-y-3">
-                  <li><a href="/" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Accueil</a></li>
-                  <li><a href="/packs" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Packs</a></li>
-                  <li><a href="/mentions-legales" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Mentions légales</a></li>
-                  <li><a href="/cgv" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">CGV</a></li>
-                  <li><a href="/politique-confidentialite" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique de confidentialité</a></li>
-                  <li><a href="/politique-cookies" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique cookies</a></li>
+                  <li><Link to="/" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Accueil</Link></li>
+                  <li><Link to="/packs" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Packs</Link></li>
+                  <li><Link to="/mentions-legales" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Mentions légales</Link></li>
+                  <li><Link to="/cgv" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">CGV</Link></li>
+                  <li><Link to="/politique-confidentialite" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique de confidentialité</Link></li>
+                  <li><Link to="/politique-cookies" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique cookies</Link></li>
                 </ul>
               </div>
               

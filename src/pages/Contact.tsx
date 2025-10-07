@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import SocialLinks from "../components/SocialLinks";
 import ScrollToTop from "../components/ScrollToTop";
@@ -70,7 +71,7 @@ ${formData.message}
             {/* Breadcrumb */}
             <nav className="text-sm text-muted-foreground mb-12">
               <ol className="flex items-center space-x-2">
-                <li><a href="/" className="hover:text-brand-gold transition-colors">Accueil</a></li>
+                <li><Link to="/" className="hover:text-brand-gold transition-colors">Accueil</Link></li>
                 <li>&gt;</li>
                 <li className="text-brand-text font-medium">Contact</li>
               </ol>
@@ -250,7 +251,7 @@ ${formData.message}
             <div className="grid md:grid-cols-4 gap-8">
               <div className="md:col-span-1">
                 <img 
-                  src="/hellojaisoif-logo.png"
+                  src={`${import.meta.env.BASE_URL}hellojaisoif-logo.png`}
                   alt="HelloJaiSoif Logo" 
                   className="h-16 w-auto mb-4 brightness-0 invert"
                 />
@@ -263,19 +264,19 @@ ${formData.message}
               <div>
                 <h4 className="font-semibold mb-4 text-brand-gold font-sans">Liens utiles</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><a href="/" className="text-gray-300 hover:text-white transition-colors">Accueil</a></li>
-                  <li><a href="/packs" className="text-gray-300 hover:text-white transition-colors">Nos Packs</a></li>
-                  <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                  <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Accueil</Link></li>
+                  <li><Link to="/packs" className="text-gray-300 hover:text-white transition-colors">Nos Packs</Link></li>
+                  <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="font-semibold mb-4 text-brand-gold font-sans">Support</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><a href="/mentions-legales" className="text-gray-300 hover:text-white transition-colors">Mentions légales</a></li>
-                  <li><a href="/cgv" className="text-gray-300 hover:text-white transition-colors">CGV</a></li>
-                  <li><a href="/politique-confidentialite" className="text-gray-300 hover:text-white transition-colors">Confidentialité</a></li>
-                  <li><a href="/politique-cookies" className="text-gray-300 hover:text-white transition-colors">Cookies</a></li>
+                  <li><Link to="/mentions-legales" className="text-gray-300 hover:text-white transition-colors">Mentions légales</Link></li>
+                  <li><Link to="/cgv" className="text-gray-300 hover:text-white transition-colors">CGV</Link></li>
+                  <li><Link to="/politique-confidentialite" className="text-gray-300 hover:text-white transition-colors">Confidentialité</Link></li>
+                  <li><Link to="/politique-cookies" className="text-gray-300 hover:text-white transition-colors">Cookies</Link></li>
                 </ul>
               </div>
               

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,41 +33,41 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <a href="/" className="hover:opacity-80 transition-opacity">
+            <Link to="/" className="hover:opacity-80 transition-opacity">
               <img 
-                src="/hellojaisoif-logo.png"
+                src={`${import.meta.env.BASE_URL}hellojaisoif-logo.png`}
                 alt="HelloJaiSoif Logo" 
                 className="h-20 w-auto max-w-none"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              href="/"
+            <Link 
+              to="/"
               className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
             >
               Accueil
-            </a>
-            <a 
-              href="/packs"
+            </Link>
+            <Link 
+              to="/packs"
               className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
             >
               Packs
-            </a>
-            <a 
-              href="/contact"
+            </Link>
+            <Link 
+              to="/contact"
               className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
             >
               Contact
-            </a>
-            <a
-              href="/packs"
+            </Link>
+            <Link
+              to="/packs"
               className="bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant font-sans"
             >
               Commander
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -89,34 +90,34 @@ const Header = () => {
             {/* Menu */}
             <div className="md:hidden fixed top-20 left-0 right-0 bg-white border-t border-brand-gold/20 shadow-elegant z-50">
               <div className="px-4 py-4 space-y-3">
-                <a 
-                  href="/"
+                <Link 
+                  to="/"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
                 >
                   Accueil
-                </a>
-                <a 
-                  href="/packs"
+                </Link>
+                <Link 
+                  to="/packs"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
                 >
                   Packs
-                </a>
-                <a 
-                  href="/contact"
+                </Link>
+                <Link 
+                  to="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
                 >
                   Contact
-                </a>
-                <a 
-                  href="/packs"
+                </Link>
+                <Link 
+                  to="/packs"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant mt-4 font-sans inline-block text-center"
                 >
                   Commander
-                </a>
+                </Link>
               </div>
             </div>
           </>

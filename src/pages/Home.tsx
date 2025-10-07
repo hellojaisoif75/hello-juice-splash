@@ -1,4 +1,5 @@
 import { Droplets, Shield, Truck, Clock, CheckCircle, Package, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import CTAButton from "@/components/CTAButton";
 import SocialLinks from "@/components/SocialLinks";
@@ -27,12 +28,12 @@ const Home = () => {
                   Vos autres packs arrivent bientôt.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a
-                    href="/packs"
+                  <Link
+                    to="/packs"
                     className="inline-flex items-center justify-center bg-brand-black hover:bg-brand-gold text-white px-10 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
                   >
                     Commandez maintenant
-                  </a>
+                  </Link>
                 </div>
                 
                 {/* Decorative line */}
@@ -174,7 +175,7 @@ const Home = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
               <div>
-                <img src="/hellojaisoif-logo.png" alt="HelloJaiSoif Logo" className="h-16 w-auto mb-6 bg-white rounded-lg p-2" />
+                <img src={`${import.meta.env.BASE_URL}hellojaisoif-logo.png`} alt="HelloJaiSoif Logo" className="h-16 w-auto mb-6 bg-white rounded-lg p-2" />
                 <p className="text-brand-white/80 mb-6 font-sans">
                   Des packs boissons prêts à partager pour tous vos événements.
                 </p>
@@ -184,12 +185,12 @@ const Home = () => {
               <div>
                 <h4 className="font-bold text-brand-gold mb-6 font-serif text-xl">Liens utiles</h4>
                 <ul className="space-y-3">
-                  <li><a href="/" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Accueil</a></li>
-                  <li><a href="/packs" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Packs</a></li>
-                  <li><a href="/mentions-legales" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Mentions légales</a></li>
-                  <li><a href="/cgv" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">CGV</a></li>
-                  <li><a href="/politique-confidentialite" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique de confidentialité</a></li>
-                  <li><a href="/politique-cookies" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique cookies</a></li>
+                  <li><Link to="/" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Accueil</Link></li>
+                  <li><Link to="/packs" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Packs</Link></li>
+                  <li><Link to="/mentions-legales" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Mentions légales</Link></li>
+                  <li><Link to="/cgv" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">CGV</Link></li>
+                  <li><Link to="/politique-confidentialite" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique de confidentialité</Link></li>
+                  <li><Link to="/politique-cookies" className="text-brand-white/80 hover:text-brand-gold transition-smooth font-sans">Politique cookies</Link></li>
                 </ul>
               </div>
               
