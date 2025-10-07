@@ -1,5 +1,4 @@
 import { Instagram, Facebook } from "lucide-react";
-import { getSecureExternalLinkProps } from "@/lib/security-utils";
 import { envConfig } from "@/lib/env-config";
 
 interface SocialLinksProps {
@@ -52,12 +51,13 @@ const SocialLinks = ({
       <span className="text-muted-foreground font-medium">Suivez-nous :</span>
       {socialLinks.map((social) => {
         const IconComponent = social.icon;
-        const linkProps = getSecureExternalLinkProps(social.url);
         
         return (
           <a
             key={social.name}
-            {...linkProps}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`p-2 text-muted-foreground transition-smooth ${social.color} hover:scale-110`}
             aria-label={`Suivre HelloJaiSoif sur ${social.name}`}
           >

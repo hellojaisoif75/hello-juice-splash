@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CTAButton from "./CTAButton";
-import { validateIframeSrc, getSecureExternalLinkProps } from "@/lib/security-utils";
+import { validateIframeSrc } from "@/lib/security-utils";
 import { envConfig } from "@/lib/env-config";
 
 interface FormEmbedProps {
@@ -16,12 +17,9 @@ const FormEmbed = ({
 
   // Validate iframe source for security
   const isValidIframeSrc = validateIframeSrc(googleFormUrl);
-  const paypalLinkProps = getSecureExternalLinkProps(paypalUrl);
 
   const handlePaypalClick = () => {
-    if (paypalLinkProps.href !== '#') {
-      window.open(paypalUrl, '_blank', 'noopener,noreferrer');
-    }
+    window.open(paypalUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -81,13 +79,13 @@ const FormEmbed = ({
       <div className="mt-4 text-xs text-muted-foreground">
         <p>
           En soumettant ce formulaire, vous acceptez notre{" "}
-          <a href="#" className="text-brand-blue hover:underline">
+          <Link to="/politique-confidentialite" className="text-brand-blue hover:underline">
             politique de confidentialité
-          </a>{" "}
+          </Link>{" "}
           et nos{" "}
-          <a href="#" className="text-brand-blue hover:underline">
+          <Link to="/cgv" className="text-brand-blue hover:underline">
             conditions générales de vente
-          </a>.
+          </Link>.
         </p>
       </div>
     </div>
