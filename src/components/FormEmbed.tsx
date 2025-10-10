@@ -1,26 +1,16 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import CTAButton from "./CTAButton";
 import { validateIframeSrc } from "@/lib/security-utils";
 import { envConfig } from "@/lib/env-config";
 
 interface FormEmbedProps {
   googleFormUrl?: string;
-  paypalUrl?: string;
 }
 
 const FormEmbed = ({ 
-  googleFormUrl = envConfig.GFORM_URL,
-  paypalUrl = envConfig.PAYPAL_LINK
+  googleFormUrl = envConfig.GFORM_URL
 }: FormEmbedProps) => {
-  const [showPaypalButton, setShowPaypalButton] = useState(false);
-
   // Validate iframe source for security
   const isValidIframeSrc = validateIframeSrc(googleFormUrl);
-
-  const handlePaypalClick = () => {
-    window.open(paypalUrl, '_blank', 'noopener,noreferrer');
-  };
 
   return (
     <div className="bg-white rounded-2xl shadow-card p-8">
@@ -30,7 +20,7 @@ const FormEmbed = ({
         </h2>
         <p className="text-muted-foreground">
           Remplissez vos coordonnées et votre adresse de livraison. 
-          Paiement à la livraison ou via PayPal.
+          Paiement à la livraison.
         </p>
       </div>
       
@@ -58,22 +48,6 @@ const FormEmbed = ({
             </p>
           </div>
         )}
-      </div>
-      
-      <div className="mt-6 p-6 bg-brand-gray-light rounded-lg">
-        <h3 className="font-semibold text-brand-text mb-2">
-          Vous avez choisi PayPal ?
-        </h3>
-        <p className="text-muted-foreground mb-4">
-          Après avoir envoyé le formulaire, cliquez sur le bouton ci-dessous pour régler votre commande.
-        </p>
-        <CTAButton
-          variant="primary"
-          onClick={handlePaypalClick}
-          className="bg-[#0070ba] hover:bg-[#005ea6]"
-        >
-          Payer avec PayPal
-        </CTAButton>
       </div>
       
       <div className="mt-4 text-xs text-muted-foreground">
