@@ -84,7 +84,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif">Sécurité</h3>
                 <p className="text-brand-gray font-sans">
-                  Paiement sécurisé PayPal ou à la livraison selon votre préférence.
+                  Paiement à la livraison pour votre tranquillité d'esprit.
                 </p>
               </div>
             </div>

@@ -56,7 +56,6 @@ const PolitiqueCookies = () => {
               <p className="text-muted-foreground mb-4">
                 Nous utilisons également des services tiers qui peuvent déposer des cookies :<br/>
                 - <strong>Google Analytics :</strong> pour analyser le trafic du site<br/>
-                - <strong>PayPal :</strong> pour les paiements sécurisés<br/>
                 - <strong>Réseaux sociaux :</strong> pour les boutons de partage
               </p>
             </section>

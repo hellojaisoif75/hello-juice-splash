@@ -5,7 +5,6 @@
 
 interface EnvConfig {
   GFORM_URL: string;
-  PAYPAL_LINK: string;
   IG_URL: string;
   FB_URL: string;
   TT_URL: string;
@@ -14,7 +13,6 @@ interface EnvConfig {
 
 const DEFAULT_VALUES: EnvConfig = {
   GFORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSdfgYDy-dtQOQMuCRreOxlHu4FlK4vNcvZUXmRXM0gRGwJ7YQ/viewform?embedded=true",
-  PAYPAL_LINK: "https://www.paypal.com/paypalme/hellojaisoif",
   IG_URL: "https://www.instagram.com/hellojaisoif/",
   FB_URL: "https://www.facebook.com/hellojaisoif",
   TT_URL: "https://www.tiktok.com/@hellojaisoif",
@@ -55,7 +53,6 @@ function getEnvVar(key: keyof EnvConfig, fallback: string): string {
  */
 export const envConfig: EnvConfig = {
   GFORM_URL: getEnvVar('GFORM_URL', DEFAULT_VALUES.GFORM_URL),
-  PAYPAL_LINK: getEnvVar('PAYPAL_LINK', DEFAULT_VALUES.PAYPAL_LINK),
   IG_URL: getEnvVar('IG_URL', DEFAULT_VALUES.IG_URL),
   FB_URL: getEnvVar('FB_URL', DEFAULT_VALUES.FB_URL),
   TT_URL: getEnvVar('TT_URL', DEFAULT_VALUES.TT_URL),
@@ -69,7 +66,7 @@ export function validateEnvironment(): { isValid: boolean; issues: string[] } {
   const issues: string[] = [];
   
   // Check required URLs
-  const requiredUrls: Array<keyof EnvConfig> = ['GFORM_URL', 'PAYPAL_LINK', 'IG_URL', 'FB_URL', 'TT_URL'];
+  const requiredUrls: Array<keyof EnvConfig> = ['GFORM_URL', 'IG_URL', 'FB_URL', 'TT_URL'];
   
   for (const key of requiredUrls) {
     const value = envConfig[key];
@@ -89,7 +86,6 @@ export function validateEnvironment(): { isValid: boolean; issues: string[] } {
  */
 export const TRUSTED_DOMAINS = [
   'docs.google.com',
-  'www.paypal.com',
   'www.instagram.com',
   'facebook.com',
   'tiktok.com',

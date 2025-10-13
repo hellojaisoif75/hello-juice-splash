@@ -47,10 +47,8 @@ const CGV = () => {
             <section>
               <h2 className="text-2xl font-bold text-brand-text mb-4">Article 4 - Paiement</h2>
               <p className="text-muted-foreground mb-4">
-                Le paiement de vos achats peut s'effectuer :<br/>
-                - Par paiement à la livraison (Cash on Delivery)<br/>
-                - Par PayPal<br/>
-                Le débit de votre compte s'effectue au moment de l'expédition de votre commande.
+                Le paiement de vos achats s'effectue uniquement par paiement à la livraison (Cash on Delivery). 
+                Le règlement sera dû au moment de la réception de votre commande.
               </p>
             </section>
 
