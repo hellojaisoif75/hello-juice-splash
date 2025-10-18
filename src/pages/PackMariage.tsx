@@ -7,6 +7,7 @@ import SocialLinks from "@/components/SocialLinks";
 import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { envConfig } from "@/lib/env-config";
+import packMariageHero from "@/assets/pack-mariage-hero.png";
 
 const PackMariage = () => {
   const packMariageData = {
@@ -95,7 +96,7 @@ const PackMariage = () => {
             <div className="max-w-5xl mx-auto">
               <div className="rounded-3xl overflow-hidden shadow-elegant">
                 <img 
-                  src="/src/assets/hero-drinks.jpg" 
+                  src={packMariageHero} 
                   alt="Boissons pour événements et mariages" 
                   className="w-full h-[400px] object-cover"
                 />
