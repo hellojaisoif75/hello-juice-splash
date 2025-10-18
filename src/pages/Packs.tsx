@@ -18,12 +18,15 @@ const Packs = () => {
     isAvailable: true,
   };
 
+  const packMariage = {
+    title: "Mariage et Événementiel",
+    price: "529 €",
+    description: "Solutions complètes pour mariages et événements jusqu'à 500 personnes",
+    icon: "🎉",
+    isAvailable: true,
+  };
+
   const comingSoonPacks = [
-    {
-      title: "Événementiel",
-      description: "Solutions complètes pour vos événements, mariages, soirées et célébrations",
-      icon: "🎉"
-    },
     {
       title: "Sport",
       description: "Parfait pour compétitions et tournois",
@@ -105,6 +108,26 @@ const Packs = () => {
                 </Link>
               </div>
 
+              {/* Pack Mariage - Available */}
+              <div className="bg-white rounded-2xl p-8 shadow-elegant border border-brand-gold/20 hover:shadow-card transition-smooth cursor-pointer group">
+                <Link to="/packs/mariage" className="block">
+                  <div className="text-5xl mb-6 text-center">{packMariage.icon}</div>
+                  <h3 className="text-2xl font-bold text-brand-black mb-4 font-serif text-center group-hover:text-brand-gold transition-smooth">
+                    {packMariage.title}
+                  </h3>
+                  <p className="text-brand-gray mb-6 font-sans text-center">
+                    {packMariage.description}
+                  </p>
+                  <div className="text-center mb-6">
+                    <span className="text-3xl font-bold text-brand-gold font-serif">{packMariage.price}</span>
+                    <span className="text-brand-gray ml-2">TTC</span>
+                  </div>
+                  <div className="bg-brand-gold text-white px-6 py-3 rounded-full text-center font-medium hover:bg-brand-black transition-smooth">
+                    <span className="font-sans">Voir le pack</span>
+                  </div>
+                </Link>
+              </div>
+
               {/* Coming Soon Packs */}
               {comingSoonPacks.map((pack, index) => (
                 <div key={index} className="bg-white rounded-2xl p-8 shadow-soft border border-brand-black/10 opacity-50 cursor-not-allowed" aria-disabled="true">
@@ -127,14 +150,22 @@ const Packs = () => {
               Prêt à commander ?
             </h2>
             <p className="text-xl text-brand-gray mb-8 font-sans">
-              Le Pack Enfants est disponible dès maintenant
+              Les Packs Enfants et Mariage sont disponibles dès maintenant
             </p>
-            <Link
-              to="/packs/enfants"
-              className="inline-flex items-center justify-center bg-brand-black hover:bg-brand-gold text-white px-8 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
-            >
-              Commander le Pack Enfants
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                to="/packs/enfants"
+                className="inline-flex items-center justify-center bg-brand-black hover:bg-brand-gold text-white px-8 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
+              >
+                Commander le Pack Enfants
+              </Link>
+              <Link
+                to="/packs/mariage"
+                className="inline-flex items-center justify-center bg-brand-gold hover:bg-brand-black text-white px-8 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
+              >
+                Commander le Pack Mariage
+              </Link>
+            </div>
           </div>
         </section>
 
