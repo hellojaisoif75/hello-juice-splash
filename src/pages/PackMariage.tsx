@@ -137,29 +137,29 @@ const PackMariage = () => {
                     </thead>
                     <tbody>
                       <tr className="border-b border-brand-gray-light">
-                        <td className="py-4 px-4 text-brand-gray font-sans">Coca-Cola</td>
-                        <td className="text-center py-4 px-4 text-brand-gray font-sans">60 bouteilles</td>
-                        <td className="text-right py-4 px-4 text-brand-gray font-sans">90 L</td>
+                        <td className="py-4 px-4 font-semibold text-brand-black font-sans">Coca-Cola</td>
+                        <td className="text-center py-4 px-4 font-semibold text-brand-black font-sans">60 bouteilles</td>
+                        <td className="text-right py-4 px-4 font-semibold text-brand-black font-sans">90 L</td>
                       </tr>
                       <tr className="border-b border-brand-gray-light">
-                        <td className="py-4 px-4 text-brand-gray font-sans">Oasis Tropical</td>
-                        <td className="text-center py-4 px-4 text-brand-gray font-sans">50 bouteilles</td>
-                        <td className="text-right py-4 px-4 text-brand-gray font-sans">75 L</td>
+                        <td className="py-4 px-4 font-semibold text-brand-black font-sans">Oasis Tropical</td>
+                        <td className="text-center py-4 px-4 font-semibold text-brand-black font-sans">50 bouteilles</td>
+                        <td className="text-right py-4 px-4 font-semibold text-brand-black font-sans">75 L</td>
                       </tr>
                       <tr className="border-b border-brand-gray-light">
-                        <td className="py-4 px-4 text-brand-gray font-sans">Ice Tea Pêche</td>
-                        <td className="text-center py-4 px-4 text-brand-gray font-sans">50 bouteilles</td>
-                        <td className="text-right py-4 px-4 text-brand-gray font-sans">75 L</td>
+                        <td className="py-4 px-4 font-semibold text-brand-black font-sans">Ice Tea Pêche</td>
+                        <td className="text-center py-4 px-4 font-semibold text-brand-black font-sans">50 bouteilles</td>
+                        <td className="text-right py-4 px-4 font-semibold text-brand-black font-sans">75 L</td>
                       </tr>
                       <tr className="border-b border-brand-gray-light">
-                        <td className="py-4 px-4 text-brand-gray font-sans">Orangina</td>
-                        <td className="text-center py-4 px-4 text-brand-gray font-sans">40 bouteilles</td>
-                        <td className="text-right py-4 px-4 text-brand-gray font-sans">60 L</td>
+                        <td className="py-4 px-4 font-semibold text-brand-black font-sans">Orangina</td>
+                        <td className="text-center py-4 px-4 font-semibold text-brand-black font-sans">40 bouteilles</td>
+                        <td className="text-right py-4 px-4 font-semibold text-brand-black font-sans">60 L</td>
                       </tr>
                       <tr className="border-b border-brand-gray-light">
-                        <td className="py-4 px-4 text-brand-gray font-sans">Eau plate</td>
-                        <td className="text-center py-4 px-4 text-brand-gray font-sans">80 bouteilles</td>
-                        <td className="text-right py-4 px-4 text-brand-gray font-sans">120 L</td>
+                        <td className="py-4 px-4 font-semibold text-brand-black font-sans">Eau plate</td>
+                        <td className="text-center py-4 px-4 font-semibold text-brand-black font-sans">80 bouteilles</td>
+                        <td className="text-right py-4 px-4 font-semibold text-brand-black font-sans">120 L</td>
                       </tr>
                       <tr className="border-t-2 border-brand-gold bg-brand-gold/5">
                         <td className="py-4 px-4 font-bold text-brand-black font-sans">Total</td>
