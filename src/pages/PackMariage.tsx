@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Truck } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -9,12 +10,70 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import { envConfig } from "@/lib/env-config";
 import packMariageHero from "@/assets/pack-mariage-hero.png";
 import cocaColaImg from "@/assets/coca-cola-1-5l.png";
+import cocaZeroImg from "@/assets/coca-zero-1-5l.png";
+import cocaCherryImg from "@/assets/coca-cherry-1-5l.png";
 import oasisTropicalImg from "@/assets/oasis-tropical-1-5l.png";
+import oasisPommeCassisImg from "@/assets/oasis-pomme-cassis-1-5l.png";
 import iceTeaPecheImg from "@/assets/ice-tea-peche-1-5l.png";
 import oranginaImg from "@/assets/orangina-1-5l.png";
+import fantaImg from "@/assets/fanta-1-5l.png";
+import fantaExoticImg from "@/assets/fanta-exotic-1-5l.png";
+import fantaCitronImg from "@/assets/fanta-citron-1-5l.png";
+import freezeImg from "@/assets/freeze-1-5l.png";
+import minuteMaidImg from "@/assets/minute-maid-1-5l.png";
+import schweppesTonicImg from "@/assets/schweppes-tonic-1-5l.png";
+import schweppesPommesImg from "@/assets/schweppes-pommes-1-5l.png";
 import cristallineImg from "@/assets/cristalline-white-bg.png";
+import { useEffect, useRef } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const PackMariage = () => {
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const autoplayRef = useRef<NodeJS.Timeout>();
+
+  const products = [
+    { name: "Fanta", img: fantaImg },
+    { name: "Fanta Exotic", img: fantaExoticImg },
+    { name: "Fanta Citron", img: fantaCitronImg },
+    { name: "Coca-Cola", img: cocaColaImg },
+    { name: "Coca Zero", img: cocaZeroImg },
+    { name: "Coca Cherry", img: cocaCherryImg },
+    { name: "Oasis Tropical", img: oasisTropicalImg },
+    { name: "Oasis Pomme Cassis", img: oasisPommeCassisImg },
+    { name: "Freeze", img: freezeImg },
+    { name: "Minute Maid", img: minuteMaidImg },
+    { name: "Ice Tea Pêche", img: iceTeaPecheImg },
+    { name: "Schweppes Tonic", img: schweppesTonicImg },
+    { name: "Schweppes Pommes", img: schweppesPommesImg },
+    { name: "Orangina", img: oranginaImg },
+    { name: "Eau Plate", img: cristallineImg },
+  ];
+
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const startAutoplay = () => {
+      autoplayRef.current = setInterval(() => {
+        carouselApi.scrollNext();
+      }, 4000);
+    };
+
+    startAutoplay();
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, [carouselApi]);
+
   const packMariageData = {
     title: "Pack Mariage et Événementiel",
     price: "529 €",
@@ -179,53 +238,33 @@ const PackMariage = () => {
                 </p>
               </div>
               
-              {/* Boissons Images Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
-                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <img 
-                    src={cocaColaImg} 
-                    alt="Coca-Cola 1,5L" 
-                    className="aspect-square object-contain rounded-lg mb-3"
-                  />
-                  <p className="text-sm font-semibold text-brand-black font-sans">Coca-Cola</p>
-                  <p className="text-xs text-brand-gray font-sans">60 bouteilles</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <img 
-                    src={oasisTropicalImg} 
-                    alt="Oasis Tropical 1,5L" 
-                    className="aspect-square object-contain rounded-lg mb-3"
-                  />
-                  <p className="text-sm font-semibold text-brand-black font-sans">Oasis Tropical</p>
-                  <p className="text-xs text-brand-gray font-sans">50 bouteilles</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <img 
-                    src={iceTeaPecheImg} 
-                    alt="Ice Tea Pêche 1,5L" 
-                    className="aspect-square object-contain rounded-lg mb-3"
-                  />
-                  <p className="text-sm font-semibold text-brand-black font-sans">Ice Tea Pêche</p>
-                  <p className="text-xs text-brand-gray font-sans">50 bouteilles</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <img 
-                    src={oranginaImg} 
-                    alt="Orangina 1,5L" 
-                    className="aspect-square object-contain rounded-lg mb-3"
-                  />
-                  <p className="text-sm font-semibold text-brand-black font-sans">Orangina</p>
-                  <p className="text-xs text-brand-gray font-sans">40 bouteilles</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <img 
-                    src={cristallineImg} 
-                    alt="Eau minérale Cristalline 1,5L" 
-                    className="aspect-square object-contain rounded-lg mb-3"
-                  />
-                  <p className="text-sm font-semibold text-brand-black font-sans">Eau plate</p>
-                  <p className="text-xs text-brand-gray font-sans">80 bouteilles</p>
-                </div>
+              {/* Boissons Carousel */}
+              <div className="mt-8">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  setApi={setCarouselApi}
+                  className="w-full"
+                >
+                  <CarouselContent>
+                    {products.map((product, index) => (
+                      <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
+                        <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                          <img 
+                            src={product.img} 
+                            alt={`${product.name} 1,5L`} 
+                            className="aspect-square object-contain rounded-lg mb-3"
+                          />
+                          <p className="text-sm font-semibold text-brand-black font-sans">{product.name}</p>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden md:flex" />
+                  <CarouselNext className="hidden md:flex" />
+                </Carousel>
               </div>
               
               <div className="bg-brand-gold/10 rounded-2xl p-6 mt-8 border border-brand-gold/20">
