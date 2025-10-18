@@ -184,6 +184,35 @@ const PackMariage = () => {
                   <strong>280 bouteilles / 420 litres</strong> - Environ 0,84L par invité pour 500 personnes
                 </p>
               </div>
+
+              {/* Boissons Carousel */}
+              <div className="mb-8">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  setApi={setCarouselApi}
+                  className="w-full"
+                >
+                  <CarouselContent>
+                    {products.map((product, index) => (
+                      <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
+                        <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                          <img 
+                            src={product.img} 
+                            alt={`${product.name} 1,5L`} 
+                            className="aspect-square object-contain rounded-lg mb-3"
+                          />
+                          <p className="text-sm font-semibold text-brand-black font-sans">{product.name}</p>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden md:flex" />
+                  <CarouselNext className="hidden md:flex" />
+                </Carousel>
+              </div>
               
               {/* Tableau descriptif */}
               <div className="bg-white rounded-2xl p-8 shadow-elegant mb-8">
@@ -236,35 +265,6 @@ const PackMariage = () => {
                 <p className="text-center text-brand-gray font-sans mt-6 italic">
                   Le choix des boissons est personnalisable (Liste Non Exhaustive)
                 </p>
-              </div>
-              
-              {/* Boissons Carousel */}
-              <div className="mt-8">
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  setApi={setCarouselApi}
-                  className="w-full"
-                >
-                  <CarouselContent>
-                    {products.map((product, index) => (
-                      <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
-                        <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                          <img 
-                            src={product.img} 
-                            alt={`${product.name} 1,5L`} 
-                            className="aspect-square object-contain rounded-lg mb-3"
-                          />
-                          <p className="text-sm font-semibold text-brand-black font-sans">{product.name}</p>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="hidden md:flex" />
-                  <CarouselNext className="hidden md:flex" />
-                </Carousel>
               </div>
               
               <div className="bg-brand-gold/10 rounded-2xl p-6 mt-8 border border-brand-gold/20">
