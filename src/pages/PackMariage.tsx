@@ -262,7 +262,7 @@ const PackMariage = () => {
                     </tbody>
                   </table>
                 </div>
-                <p className="text-center text-brand-gray font-sans mt-6 italic">
+                <p className="text-center text-brand-gray font-sans mt-6 italic text-lg font-bold">
                   Le choix des boissons est personnalisable (Liste Non Exhaustive)
                 </p>
               </div>
