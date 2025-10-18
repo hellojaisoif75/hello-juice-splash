@@ -8,6 +8,11 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { envConfig } from "@/lib/env-config";
 import packMariageHero from "@/assets/pack-mariage-hero.png";
+import cocaColaImg from "@/assets/coca-cola-1-5l.png";
+import oasisTropicalImg from "@/assets/oasis-tropical-1-5l.png";
+import iceTeaPecheImg from "@/assets/ice-tea-peche-1-5l.png";
+import oranginaImg from "@/assets/orangina-1-5l.png";
+import cristallineImg from "@/assets/cristalline-white-bg.png";
 
 const PackMariage = () => {
   const packMariageData = {
@@ -177,37 +182,45 @@ const PackMariage = () => {
               {/* Boissons Images Grid */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
                 <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-4xl">🥤</span>
-                  </div>
+                  <img 
+                    src={cocaColaImg} 
+                    alt="Coca-Cola 1,5L" 
+                    className="aspect-square object-contain rounded-lg mb-3"
+                  />
                   <p className="text-sm font-semibold text-brand-black font-sans">Coca-Cola</p>
                   <p className="text-xs text-brand-gray font-sans">60 bouteilles</p>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-4xl">🍹</span>
-                  </div>
+                  <img 
+                    src={oasisTropicalImg} 
+                    alt="Oasis Tropical 1,5L" 
+                    className="aspect-square object-contain rounded-lg mb-3"
+                  />
                   <p className="text-sm font-semibold text-brand-black font-sans">Oasis Tropical</p>
                   <p className="text-xs text-brand-gray font-sans">50 bouteilles</p>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-4xl">🍑</span>
-                  </div>
+                  <img 
+                    src={iceTeaPecheImg} 
+                    alt="Ice Tea Pêche 1,5L" 
+                    className="aspect-square object-contain rounded-lg mb-3"
+                  />
                   <p className="text-sm font-semibold text-brand-black font-sans">Ice Tea Pêche</p>
                   <p className="text-xs text-brand-gray font-sans">50 bouteilles</p>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-soft text-center">
-                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-4xl">🍊</span>
-                  </div>
+                  <img 
+                    src={oranginaImg} 
+                    alt="Orangina 1,5L" 
+                    className="aspect-square object-contain rounded-lg mb-3"
+                  />
                   <p className="text-sm font-semibold text-brand-black font-sans">Orangina</p>
                   <p className="text-xs text-brand-gray font-sans">40 bouteilles</p>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-soft text-center">
                   <img 
-                    src="/src/assets/cristalline-white-bg.png" 
-                    alt="Eau minérale" 
+                    src={cristallineImg} 
+                    alt="Eau minérale Cristalline 1,5L" 
                     className="aspect-square object-contain rounded-lg mb-3"
                   />
                   <p className="text-sm font-semibold text-brand-black font-sans">Eau plate</p>
