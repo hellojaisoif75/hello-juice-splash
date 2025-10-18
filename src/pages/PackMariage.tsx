@@ -121,6 +121,59 @@ const PackMariage = () => {
                 </p>
               </div>
               
+              {/* Tableau descriptif */}
+              <div className="bg-white rounded-2xl p-8 shadow-elegant mb-8">
+                <h3 className="text-2xl font-bold text-brand-black mb-6 font-serif text-center">
+                  Contenu du pack (bouteilles 1,5 L)
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b-2 border-brand-gold">
+                        <th className="text-left py-4 px-4 font-bold text-brand-black font-sans">Boisson</th>
+                        <th className="text-center py-4 px-4 font-bold text-brand-black font-sans">Quantité</th>
+                        <th className="text-right py-4 px-4 font-bold text-brand-black font-sans">Volume total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-brand-gray-light">
+                        <td className="py-4 px-4 text-brand-gray font-sans">Coca-Cola</td>
+                        <td className="text-center py-4 px-4 text-brand-gray font-sans">60 bouteilles</td>
+                        <td className="text-right py-4 px-4 text-brand-gray font-sans">90 L</td>
+                      </tr>
+                      <tr className="border-b border-brand-gray-light">
+                        <td className="py-4 px-4 text-brand-gray font-sans">Oasis Tropical</td>
+                        <td className="text-center py-4 px-4 text-brand-gray font-sans">50 bouteilles</td>
+                        <td className="text-right py-4 px-4 text-brand-gray font-sans">75 L</td>
+                      </tr>
+                      <tr className="border-b border-brand-gray-light">
+                        <td className="py-4 px-4 text-brand-gray font-sans">Ice Tea Pêche</td>
+                        <td className="text-center py-4 px-4 text-brand-gray font-sans">50 bouteilles</td>
+                        <td className="text-right py-4 px-4 text-brand-gray font-sans">75 L</td>
+                      </tr>
+                      <tr className="border-b border-brand-gray-light">
+                        <td className="py-4 px-4 text-brand-gray font-sans">Orangina</td>
+                        <td className="text-center py-4 px-4 text-brand-gray font-sans">40 bouteilles</td>
+                        <td className="text-right py-4 px-4 text-brand-gray font-sans">60 L</td>
+                      </tr>
+                      <tr className="border-b border-brand-gray-light">
+                        <td className="py-4 px-4 text-brand-gray font-sans">Eau plate</td>
+                        <td className="text-center py-4 px-4 text-brand-gray font-sans">80 bouteilles</td>
+                        <td className="text-right py-4 px-4 text-brand-gray font-sans">120 L</td>
+                      </tr>
+                      <tr className="border-t-2 border-brand-gold bg-brand-gold/5">
+                        <td className="py-4 px-4 font-bold text-brand-black font-sans">Total</td>
+                        <td className="text-center py-4 px-4 font-bold text-brand-black font-sans">280 bouteilles</td>
+                        <td className="text-right py-4 px-4 font-bold text-brand-black font-sans">420 L</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-center text-brand-gray font-sans mt-6 italic">
+                  Le choix des boissons est personnalisable (Liste Non Exhaustive)
+                </p>
+              </div>
+              
               {/* Boissons Images Grid */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
                 <div className="bg-white rounded-xl p-4 shadow-soft text-center">
