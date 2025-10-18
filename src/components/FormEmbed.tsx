@@ -15,9 +15,6 @@ const FormEmbed = ({
   return (
     <div className="bg-white rounded-2xl shadow-card p-8">
       <div className="mb-6">
-        <h2 className="text-3xl font-bold text-brand-text mb-4">
-          Commandez votre Pack Enfants
-        </h2>
         <p className="text-muted-foreground">
           Remplissez vos coordonnées et votre adresse de livraison. 
           Paiement à la livraison.
