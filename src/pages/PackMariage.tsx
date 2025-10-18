@@ -114,12 +114,6 @@ const PackMariage = () => {
                   <strong>280 bouteilles / 420 litres</strong> - Environ 0,84L par invité pour 500 personnes
                 </p>
               </div>
-              <ProductCard 
-                title="Contenu du Pack Mariage et Événementiel" 
-                drinks={packMariageData.drinks} 
-                isAvailable={true} 
-                className="max-w-none" 
-              />
               
               {/* Boissons Images Grid */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
