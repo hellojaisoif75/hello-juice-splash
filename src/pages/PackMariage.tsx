@@ -85,6 +85,12 @@ const PackMariage = () => {
               <p className="text-lg text-brand-gold font-semibold font-sans">
                 🎁 Pack enfant offert avec ce pack
               </p>
+              <button
+                onClick={() => document.getElementById('formulaire')?.scrollIntoView({ behavior: 'smooth' })}
+                className="mt-6 px-8 py-4 bg-brand-gold hover:bg-brand-black text-white font-semibold rounded-full transition-smooth shadow-elegant hover:shadow-button"
+              >
+                Commandez Votre Pack Événementiel et Mariage
+              </button>
               <div className="w-24 h-1 bg-brand-gold mx-auto mt-6"></div>
             </div>
           </div>
