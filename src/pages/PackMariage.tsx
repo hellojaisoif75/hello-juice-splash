@@ -89,13 +89,28 @@ const PackMariage = () => {
           </div>
         </section>
 
+        {/* Hero Image Section */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="rounded-3xl overflow-hidden shadow-elegant">
+                <img 
+                  src="/src/assets/hero-drinks.jpg" 
+                  alt="Boissons pour événements et mariages" 
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Product Details Section */}
         <section className="py-20 bg-brand-gray-light">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl p-6 shadow-elegant mb-8">
                 <p className="text-center text-brand-gray font-sans text-lg">
-                  <strong>280 bouteilles / 420 litres</strong> - Environ 0,84L par invité
+                  <strong>280 bouteilles / 420 litres</strong> - Environ 0,84L par invité pour 500 personnes
                 </p>
               </div>
               <ProductCard 
@@ -104,6 +119,48 @@ const PackMariage = () => {
                 isAvailable={true} 
                 className="max-w-none" 
               />
+              
+              {/* Boissons Images Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
+                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
+                    <span className="text-4xl">🥤</span>
+                  </div>
+                  <p className="text-sm font-semibold text-brand-black font-sans">Coca-Cola</p>
+                  <p className="text-xs text-brand-gray font-sans">60 bouteilles</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
+                    <span className="text-4xl">🍹</span>
+                  </div>
+                  <p className="text-sm font-semibold text-brand-black font-sans">Oasis Tropical</p>
+                  <p className="text-xs text-brand-gray font-sans">50 bouteilles</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
+                    <span className="text-4xl">🍑</span>
+                  </div>
+                  <p className="text-sm font-semibold text-brand-black font-sans">Ice Tea Pêche</p>
+                  <p className="text-xs text-brand-gray font-sans">50 bouteilles</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                  <div className="aspect-square bg-brand-gray-light rounded-lg mb-3 flex items-center justify-center">
+                    <span className="text-4xl">🍊</span>
+                  </div>
+                  <p className="text-sm font-semibold text-brand-black font-sans">Orangina</p>
+                  <p className="text-xs text-brand-gray font-sans">40 bouteilles</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-soft text-center">
+                  <img 
+                    src="/src/assets/cristalline-white-bg.png" 
+                    alt="Eau minérale" 
+                    className="aspect-square object-contain rounded-lg mb-3"
+                  />
+                  <p className="text-sm font-semibold text-brand-black font-sans">Eau plate</p>
+                  <p className="text-xs text-brand-gray font-sans">80 bouteilles</p>
+                </div>
+              </div>
+              
               <div className="bg-brand-gold/10 rounded-2xl p-6 mt-8 border border-brand-gold/20">
                 <h3 className="text-xl font-bold text-brand-black mb-4 font-serif text-center">
                   Personnalisation disponible
@@ -172,7 +229,7 @@ const PackMariage = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 font-serif">
-                Commander votre Pack
+                Commandez votre Pack Événementiel
               </h2>
               <p className="text-xl text-brand-gray font-sans">
                 Remplissez le formulaire ci-dessous pour passer votre commande et personnaliser votre pack
