@@ -14,37 +14,37 @@ const PackMariage = () => {
     price: "529 €",
     drinks: [
       {
-        name: "Coca-Cola",
-        description: "Boisson gazeuse rafraîchissante",
-        allergens: "Aucun allergène majeur",
+        name: "Coca-Cola 1,5L",
+        description: "La boisson gazeuse emblématique, parfaite pour accompagner votre réception",
+        allergens: "Sans allergènes - Convient à tous les invités",
         volume: "1,5L",
         quantity: "60 bouteilles (90L)"
       },
       {
-        name: "Oasis Tropical",
-        description: "Boisson aux fruits saveur tropicale",
-        allergens: "Aucun allergène majeur",
+        name: "Oasis Tropical 1,5L",
+        description: "Boisson fruitée aux saveurs exotiques pour une touche de fraîcheur",
+        allergens: "Sans allergènes - Boisson aux fruits sans pulpe",
         volume: "1,5L",
         quantity: "50 bouteilles (75L)"
       },
       {
-        name: "Ice Tea Pêche",
-        description: "Thé glacé saveur pêche",
-        allergens: "Aucun allergène majeur",
+        name: "Ice Tea Pêche 1,5L",
+        description: "Thé glacé délicatement parfumé à la pêche, idéal pour les moments de convivialité",
+        allergens: "Sans allergènes - Peut contenir des traces de thé",
         volume: "1,5L",
         quantity: "50 bouteilles (75L)"
       },
       {
-        name: "Orangina",
-        description: "Boisson gazeuse à l'orange avec pulpe",
-        allergens: "Aucun allergène majeur",
+        name: "Orangina 1,5L",
+        description: "Boisson pétillante à l'orange naturelle avec pulpe de fruit",
+        allergens: "Sans allergènes - Contient de la pulpe d'orange naturelle",
         volume: "1,5L",
         quantity: "40 bouteilles (60L)"
       },
       {
-        name: "Eau plate",
-        description: "Eau minérale naturelle ou eau de source",
-        allergens: "Aucun",
+        name: "Eau Plate 1,5L",
+        description: "Eau minérale naturelle pour l'hydratation de vos invités",
+        allergens: "Aucun allergène",
         volume: "1,5L",
         quantity: "80 bouteilles (120L)"
       }
