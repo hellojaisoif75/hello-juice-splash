@@ -310,19 +310,19 @@ const PackMariage = () => {
                 <ul className="space-y-3 text-brand-gray font-sans">
                   <li className="flex justify-between items-center">
                     <span>Glaçons et bacs à rafraîchir</span>
-                    <span className="font-semibold text-brand-gold">+40€</span>
+                    <span className="font-semibold text-brand-gold">+40€ TTC</span>
                   </li>
                   <li className="flex justify-between items-center">
                     <span>Livraison sur lieu</span>
-                    <span className="font-semibold text-brand-gold">+30 à +50€</span>
+                    <span className="font-semibold text-brand-gold">+30 à +50€ TTC</span>
                   </li>
                   <li className="flex justify-between items-center">
                     <span>Étiquettes personnalisées</span>
-                    <span className="font-semibold text-brand-gold">+25€</span>
+                    <span className="font-semibold text-brand-gold">+25€ TTC</span>
                   </li>
                   <li className="flex justify-between items-center">
                     <span>Jus bio ou limonades artisanales</span>
-                    <span className="font-semibold text-brand-gold">+35€</span>
+                    <span className="font-semibold text-brand-gold">+35€ TTC</span>
                   </li>
                 </ul>
               </div>
