@@ -8,6 +8,7 @@ interface EnvConfig {
   IG_URL: string;
   FB_URL: string;
   TT_URL: string;
+  WA_URL: string;
   GA_ID?: string;
 }
 
@@ -16,6 +17,7 @@ const DEFAULT_VALUES: EnvConfig = {
   IG_URL: "https://www.instagram.com/hellojaisoif/",
   FB_URL: "https://www.facebook.com/hellojaisoif",
   TT_URL: "https://www.tiktok.com/@hellojaisoif",
+  WA_URL: "https://wa.me/33667564139",
   GA_ID: undefined,
 };
 
@@ -56,6 +58,7 @@ export const envConfig: EnvConfig = {
   IG_URL: getEnvVar('IG_URL', DEFAULT_VALUES.IG_URL),
   FB_URL: getEnvVar('FB_URL', DEFAULT_VALUES.FB_URL),
   TT_URL: getEnvVar('TT_URL', DEFAULT_VALUES.TT_URL),
+  WA_URL: getEnvVar('WA_URL', DEFAULT_VALUES.WA_URL),
   GA_ID: import.meta.env.VITE_GA_ID,
 };
 
@@ -66,7 +69,7 @@ export function validateEnvironment(): { isValid: boolean; issues: string[] } {
   const issues: string[] = [];
   
   // Check required URLs
-  const requiredUrls: Array<keyof EnvConfig> = ['GFORM_URL', 'IG_URL', 'FB_URL', 'TT_URL'];
+  const requiredUrls: Array<keyof EnvConfig> = ['GFORM_URL', 'IG_URL', 'FB_URL', 'TT_URL', 'WA_URL'];
   
   for (const key of requiredUrls) {
     const value = envConfig[key];
@@ -89,5 +92,6 @@ export const TRUSTED_DOMAINS = [
   'www.instagram.com',
   'facebook.com',
   'tiktok.com',
+  'wa.me',
   'www.google-analytics.com',
 ] as const;
