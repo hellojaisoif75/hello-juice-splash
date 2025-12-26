@@ -19,7 +19,7 @@ const Home = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="flex-1 text-center lg:text-left">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black mb-4 font-serif">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-brand-black mb-6 font-serif tracking-widest uppercase">
                   HelloJaiSoif
                 </h1>
                 <p className="text-2xl md:text-3xl text-brand-gold font-serif mb-6">
