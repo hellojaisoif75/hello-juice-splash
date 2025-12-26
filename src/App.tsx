@@ -8,6 +8,7 @@ import Packs from "./pages/Packs";
 import PackEnfants from "./pages/PackEnfants";
 import PackMariage from "./pages/PackMariage";
 import Contact from "./pages/Contact";
+import DevenirPartenaire from "./pages/DevenirPartenaire";
 import NotFound from "./pages/NotFound";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGV from "./pages/CGV";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/packs/enfants" element={<PackEnfants />} />
           <Route path="/packs/mariage" element={<PackMariage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/devenir-partenaire" element={<DevenirPartenaire />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgv" element={<CGV />} />
           <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
