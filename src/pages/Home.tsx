@@ -1,4 +1,4 @@
-import { Droplets, Shield, Truck, Clock, CheckCircle, Package, Eye } from "lucide-react";
+import { Shield, Truck, Package, Eye, Heart, Users, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import CTAButton from "@/components/CTAButton";
@@ -19,20 +19,21 @@ const Home = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="flex-1 text-center lg:text-left">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black mb-6 font-serif">
-                  Des packs boissons<br />
-                  <span className="text-brand-gold">prêts à partager</span>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black mb-4 font-serif">
+                  HelloJaiSoif
                 </h1>
-                <p className="text-xl md:text-2xl text-brand-gray mb-8 font-sans max-w-2xl">
-                  Commandez aujourd'hui le Pack Enfants (54,99 € TTC).<br />
-                  Vos autres packs arrivent bientôt.
+                <p className="text-2xl md:text-3xl text-brand-gold font-serif mb-6">
+                  Vos événements, nos boissons
+                </p>
+                <p className="text-lg md:text-xl text-brand-gray mb-8 font-sans max-w-2xl">
+                  Nous préparons des packs boissons sur-mesure pour tous vos moments de partage : anniversaires, mariages, événements sportifs et bien plus encore.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link
                     to="/packs"
                     className="inline-flex items-center justify-center bg-brand-black hover:bg-brand-gold text-white px-10 py-4 rounded-full font-semibold transition-smooth shadow-elegant font-sans text-lg"
                   >
-                    Commandez maintenant
+                    Découvrir nos packs
                   </Link>
                 </div>
                 
@@ -51,6 +52,51 @@ const Home = () => {
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-32 h-32 bg-brand-gold/10 rounded-full -z-10"></div>
                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-gold/5 rounded-full -z-10"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 font-serif">
+                Qui sommes-nous ?
+              </h2>
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+              <p className="text-xl text-brand-gray font-sans max-w-3xl mx-auto">
+                HelloJaiSoif, c'est la solution simple pour vos événements. Plus besoin de courir faire vos courses : nous préparons vos packs boissons et vous les livrons directement chez vous.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="text-center p-8 rounded-2xl bg-brand-gray-light border border-brand-gold/20">
+                <div className="w-14 h-14 mx-auto mb-6 bg-brand-gold rounded-full flex items-center justify-center">
+                  <Sparkles className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-brand-black mb-3 font-serif">Simplicité</h3>
+                <p className="text-brand-gray font-sans text-sm">
+                  Commandez en quelques clics, nous nous occupons du reste.
+                </p>
+              </div>
+              <div className="text-center p-8 rounded-2xl bg-brand-gray-light border border-brand-gold/20">
+                <div className="w-14 h-14 mx-auto mb-6 bg-brand-gold rounded-full flex items-center justify-center">
+                  <Heart className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-brand-black mb-3 font-serif">Qualité</h3>
+                <p className="text-brand-gray font-sans text-sm">
+                  Des boissons sélectionnées avec soin pour satisfaire tous les goûts.
+                </p>
+              </div>
+              <div className="text-center p-8 rounded-2xl bg-brand-gray-light border border-brand-gold/20">
+                <div className="w-14 h-14 mx-auto mb-6 bg-brand-gold rounded-full flex items-center justify-center">
+                  <Users className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-brand-black mb-3 font-serif">Service</h3>
+                <p className="text-brand-gray font-sans text-sm">
+                  Un accompagnement personnalisé pour chaque événement.
+                </p>
               </div>
             </div>
           </div>
