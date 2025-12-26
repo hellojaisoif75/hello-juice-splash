@@ -19,12 +19,9 @@ const Home = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="flex-1 text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-brand-black mb-6 font-serif tracking-widest uppercase">
-                  HelloJaiSoif
-                </h1>
-                <p className="text-2xl md:text-3xl text-brand-gold font-serif mb-6">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-brand-black mb-6 font-serif tracking-wide">
                   Vos événements, nos boissons
-                </p>
+                </h1>
                 <p className="text-lg md:text-xl text-brand-gray mb-8 font-sans max-w-2xl">
                   Nous préparons des packs boissons sur-mesure pour tous vos moments de partage : anniversaires, mariages, événements sportifs et bien plus encore.
                 </p>
