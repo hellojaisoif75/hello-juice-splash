@@ -62,6 +62,12 @@ const Header = () => {
             >
               Contact
             </Link>
+            <Link 
+              to="/devenir-partenaire"
+              className="text-brand-black hover:text-brand-gold transition-smooth font-medium font-sans"
+            >
+              Devenir partenaire
+            </Link>
             <Link
               to="/packs"
               className="bg-brand-black hover:bg-brand-gold text-white px-8 py-3 rounded-full font-semibold transition-smooth shadow-elegant font-sans"
@@ -110,6 +116,13 @@ const Header = () => {
                   className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
                 >
                   Contact
+                </Link>
+                <Link 
+                  to="/devenir-partenaire"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full text-left text-brand-black hover:text-brand-gold transition-smooth font-medium py-2 font-sans"
+                >
+                  Devenir partenaire
                 </Link>
                 <Link 
                   to="/packs"
