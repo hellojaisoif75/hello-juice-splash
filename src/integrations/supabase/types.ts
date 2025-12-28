@@ -14,13 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      reviews: {
+        Row: {
+          author_name: string
+          comment: string
+          created_at: string | null
+          email: string | null
+          event_type: string | null
+          id: string
+          is_approved: boolean | null
+          rating: number
+        }
+        Insert: {
+          author_name: string
+          comment: string
+          created_at?: string | null
+          email?: string | null
+          event_type?: string | null
+          id?: string
+          is_approved?: boolean | null
+          rating: number
+        }
+        Update: {
+          author_name?: string
+          comment?: string
+          created_at?: string | null
+          email?: string | null
+          event_type?: string | null
+          id?: string
+          is_approved?: boolean | null
+          rating?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_date_from_timestamptz: { Args: { ts: string }; Returns: string }
     }
     Enums: {
       [_ in never]: never
