@@ -1,14 +1,23 @@
-import { Shield, Truck, Package, Eye, Heart, Users, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { Shield, Truck, Package, Eye, Heart, Users, Sparkles, MessageSquarePlus } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import CTAButton from "@/components/CTAButton";
 import SocialLinks from "@/components/SocialLinks";
 import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import ReviewForm from "@/components/ReviewForm";
+import ReviewsList from "@/components/ReviewsList";
 import { envConfig } from "@/lib/env-config";
 import heroImage from "@/assets/hero-cocktails.png";
 
 const Home = () => {
+  const [showReviewForm, setShowReviewForm] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const handleReviewSuccess = () => {
+    setRefreshKey((prev) => prev + 1);
+  };
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-white">
@@ -158,60 +167,28 @@ const Home = () => {
               <div className="w-24 h-1 bg-brand-gold mx-auto mt-6"></div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="bg-brand-gray-light rounded-2xl p-8 shadow-soft border border-brand-gold/20">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">M</span>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold text-brand-black font-serif">Marie</h4>
-                    <div className="flex text-brand-gold">
-                      {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-brand-gray font-sans italic">
-                  "Parfait pour l'anniversaire de ma fille ! Les enfants ont adoré et moi j'ai été tranquille. Livraison rapide et tout était parfait."
-                </p>
-              </div>
-              
-              <div className="bg-brand-gray-light rounded-2xl p-8 shadow-soft border border-brand-gold/20">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">J</span>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold text-brand-black font-serif">Julien</h4>
-                    <div className="flex text-brand-gold">
-                      {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-brand-gray font-sans italic">
-                  "Super pratique pour notre événement sportif. Fini les courses de dernière minute, tout arrive préparé et les quantités sont parfaites !"
-                </p>
-              </div>
-              
-              <div className="bg-brand-gray-light rounded-2xl p-8 shadow-soft border border-brand-gold/20">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">S</span>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold text-brand-black font-serif">Sophie</h4>
-                    <div className="flex text-brand-gold">
-                      {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-brand-gray font-sans italic">
-                  "Excellent service ! Les boissons sont de qualité et j'adore la transparence sur les ingrédients. Je recommande vivement !"
-                </p>
-              </div>
+            <ReviewsList key={refreshKey} />
+            
+            {/* Leave a review button */}
+            <div className="text-center mt-12">
+              <button
+                onClick={() => setShowReviewForm(true)}
+                className="inline-flex items-center justify-center bg-brand-gold hover:bg-brand-black text-white px-8 py-4 rounded-full font-semibold transition-smooth shadow-button font-sans text-lg"
+              >
+                <MessageSquarePlus className="w-5 h-5 mr-2" />
+                Laisser un avis
+              </button>
             </div>
           </div>
         </section>
+
+        {/* Review Form Modal */}
+        {showReviewForm && (
+          <ReviewForm
+            onClose={() => setShowReviewForm(false)}
+            onSuccess={handleReviewSuccess}
+          />
+        )}
 
         {/* Footer */}
         <footer className="bg-brand-black text-white py-16">
