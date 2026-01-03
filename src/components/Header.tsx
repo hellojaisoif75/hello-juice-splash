@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,11 +35,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="hover:opacity-80 transition-opacity">
-              <img 
-                src={`${import.meta.env.BASE_URL}hellojaisoif-logo.png`}
-                alt="HelloJaiSoif Logo" 
-                className="h-20 w-auto max-w-none"
-              />
+              <Logo size="lg" />
             </Link>
           </div>
 

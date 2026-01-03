@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Star } from "lucide-react";
+import { Star, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 interface Review {
@@ -9,6 +9,8 @@ interface Review {
   comment: string;
   event_type: string | null;
   created_at: string;
+  admin_reply: string | null;
+  replied_at: string | null;
 }
 
 // Static fallback testimonials when no approved reviews exist
@@ -21,6 +23,8 @@ const FALLBACK_REVIEWS: Review[] = [
       "Parfait pour l'anniversaire de ma fille ! Les enfants ont adoré et moi j'ai été tranquille. Livraison rapide et tout était parfait.",
     event_type: "Anniversaire",
     created_at: new Date().toISOString(),
+    admin_reply: null,
+    replied_at: null,
   },
   {
     id: "fallback-2",
@@ -30,6 +34,8 @@ const FALLBACK_REVIEWS: Review[] = [
       "Super pratique pour notre événement sportif. Fini les courses de dernière minute, tout arrive préparé et les quantités sont parfaites !",
     event_type: "Événement sportif",
     created_at: new Date().toISOString(),
+    admin_reply: null,
+    replied_at: null,
   },
   {
     id: "fallback-3",
@@ -39,6 +45,8 @@ const FALLBACK_REVIEWS: Review[] = [
       "Excellent service ! Les boissons sont de qualité et j'adore la transparence sur les ingrédients. Je recommande vivement !",
     event_type: null,
     created_at: new Date().toISOString(),
+    admin_reply: null,
+    replied_at: null,
   },
 ];
 
@@ -54,14 +62,14 @@ export default function ReviewsList() {
     try {
       const { data, error } = await supabase
         .from("reviews")
-        .select("id, author_name, rating, comment, event_type, created_at")
+        .select("id, author_name, rating, comment, event_type, created_at, admin_reply, replied_at")
         .order("created_at", { ascending: false })
         .limit(6);
 
       if (error) throw error;
 
       // Use fallback reviews if no approved reviews exist
-      setReviews(data && data.length > 0 ? data : FALLBACK_REVIEWS);
+      setReviews(data && data.length > 0 ? (data as Review[]) : FALLBACK_REVIEWS);
     } catch (error) {
       console.error("Error fetching reviews:", error);
       setReviews(FALLBACK_REVIEWS);
@@ -132,6 +140,20 @@ export default function ReviewsList() {
             </div>
           </div>
           <p className="text-brand-gray font-sans italic">"{review.comment}"</p>
+          
+          {/* Admin Reply */}
+          {review.admin_reply && (
+            <div className="mt-4 pt-4 border-t border-brand-gold/20">
+              <div className="flex items-start gap-2">
+                <MessageCircle className="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs font-semibold text-brand-gold mb-1">Réponse HelloJaiSoif</p>
+                  <p className="text-sm text-brand-gray font-sans">{review.admin_reply}</p>
+                </div>
+              </div>
+            </div>
+          )}
+          
           {review.event_type && (
             <p className="text-xs text-brand-gold mt-4 font-sans">
               {review.event_type}
