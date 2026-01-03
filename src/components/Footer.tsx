@@ -3,6 +3,7 @@ import { useAuth } from '@/hooks/useAuth';
 import SocialLinks from '@/components/SocialLinks';
 import { envConfig } from '@/lib/env-config';
 import { Settings } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 export default function Footer() {
   const { isAdmin } = useAuth();
@@ -12,7 +13,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <img src={`${import.meta.env.BASE_URL}hellojaisoif-logo.png`} alt="HelloJaiSoif Logo" className="h-16 w-auto mb-6 bg-white rounded-lg p-2" />
+            <Logo size="md" withBackground className="mb-6" />
             <p className="text-brand-white/80 mb-6 font-sans">
               Des packs boissons prêts à partager pour tous vos événements.
             </p>

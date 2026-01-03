@@ -21,8 +21,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
-import { Check, X, Trash2, Star, RefreshCw } from 'lucide-react';
+import { Check, X, Trash2, Star, RefreshCw, MessageSquare } from 'lucide-react';
 
 interface Review {
   id: string;
@@ -33,12 +42,17 @@ interface Review {
   event_type: string | null;
   is_approved: boolean | null;
   created_at: string | null;
+  admin_reply: string | null;
+  replied_at: string | null;
 }
 
 export default function AdminReviewsTable() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'pending' | 'approved'>('all');
+  const [replyDialogOpen, setReplyDialogOpen] = useState(false);
+  const [selectedReview, setSelectedReview] = useState<Review | null>(null);
+  const [replyText, setReplyText] = useState('');
 
   const fetchReviews = async () => {
     setIsLoading(true);
@@ -113,6 +127,38 @@ export default function AdminReviewsTable() {
         toast.error('Erreur lors de la suppression');
       } else {
         toast.success('Avis supprimé');
+        fetchReviews();
+      }
+    } catch {
+      toast.error('Une erreur est survenue');
+    }
+  };
+
+  const openReplyDialog = (review: Review) => {
+    setSelectedReview(review);
+    setReplyText(review.admin_reply || '');
+    setReplyDialogOpen(true);
+  };
+
+  const handleReply = async () => {
+    if (!selectedReview || !replyText.trim()) return;
+
+    try {
+      const { error } = await supabase
+        .from('reviews')
+        .update({ 
+          admin_reply: replyText.trim(),
+          replied_at: new Date().toISOString()
+        })
+        .eq('id', selectedReview.id);
+
+      if (error) {
+        toast.error('Erreur lors de l\'envoi de la réponse');
+      } else {
+        toast.success('Réponse envoyée');
+        setReplyDialogOpen(false);
+        setSelectedReview(null);
+        setReplyText('');
         fetchReviews();
       }
     } catch {
@@ -244,6 +290,15 @@ export default function AdminReviewsTable() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-1">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => openReplyDialog(review)}
+                        title={review.admin_reply ? "Modifier la réponse" : "Répondre"}
+                        className={`h-8 w-8 ${review.admin_reply ? 'text-brand-gold hover:text-brand-gold/80' : 'text-blue-600 hover:text-blue-700'} hover:bg-blue-50`}
+                      >
+                        <MessageSquare className="h-4 w-4" />
+                      </Button>
                       {!review.is_approved && (
                         <Button
                           variant="ghost"
@@ -304,6 +359,41 @@ export default function AdminReviewsTable() {
           </TableBody>
         </Table>
       </div>
+
+      {/* Reply Dialog */}
+      <Dialog open={replyDialogOpen} onOpenChange={setReplyDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>
+              {selectedReview?.admin_reply ? 'Modifier la réponse' : 'Répondre à l\'avis'}
+            </DialogTitle>
+            <DialogDescription>
+              Réponse à l'avis de <strong>{selectedReview?.author_name}</strong>
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="bg-muted/50 p-3 rounded-lg text-sm">
+              <p className="italic">"{selectedReview?.comment}"</p>
+            </div>
+            <Textarea
+              placeholder="Votre réponse..."
+              value={replyText}
+              onChange={(e) => setReplyText(e.target.value)}
+              rows={4}
+              className="resize-none"
+            />
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setReplyDialogOpen(false)}>
+              Annuler
+            </Button>
+            <Button onClick={handleReply} disabled={!replyText.trim()}>
+              <MessageSquare className="h-4 w-4 mr-2" />
+              Envoyer
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

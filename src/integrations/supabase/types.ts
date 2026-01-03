@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       reviews: {
         Row: {
+          admin_reply: string | null
           author_name: string
           comment: string
           created_at: string | null
@@ -24,8 +25,10 @@ export type Database = {
           id: string
           is_approved: boolean | null
           rating: number
+          replied_at: string | null
         }
         Insert: {
+          admin_reply?: string | null
           author_name: string
           comment: string
           created_at?: string | null
@@ -34,8 +37,10 @@ export type Database = {
           id?: string
           is_approved?: boolean | null
           rating: number
+          replied_at?: string | null
         }
         Update: {
+          admin_reply?: string | null
           author_name?: string
           comment?: string
           created_at?: string | null
@@ -44,6 +49,7 @@ export type Database = {
           id?: string
           is_approved?: boolean | null
           rating?: number
+          replied_at?: string | null
         }
         Relationships: []
       }
